@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 
 import './App.css';
+import 'antd/dist/antd.css'; //importo la librería de los chinos
 import LoguinAdmin from "./views/LoguinAdmin";
 import LoguinCliente from "./views/LoguinCliente";
 
