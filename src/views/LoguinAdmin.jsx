@@ -9,4 +9,3 @@ const LoguinAdmin = () => {
 }
 
 export default LoguinAdmin
-//rca

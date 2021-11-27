@@ -4,6 +4,7 @@ import './App.css';
 import 'antd/dist/antd.css'; //importo la librería de los chinos
 import LoguinAdmin from "./views/LoguinAdmin";
 import LoguinCliente from "./views/LoguinCliente";
+import ClientesTodos from "./views/ClientesTodos";
 
 function App() {
   
@@ -13,6 +14,7 @@ function App() {
     <Routes>
       <Route path="/loguinadmin" element={<LoguinAdmin />} />
       <Route path="/loguin" element={<LoguinCliente />} />
+      <Route path="/clientes" element={<ClientesTodos />} />
     </Routes>
     </div>
   );
