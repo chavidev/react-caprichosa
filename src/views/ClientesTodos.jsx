@@ -10,27 +10,32 @@ import { useEffect,useState } from 'react'
 const ClientesTodos = () => {
 
     //¿tiene lógica?
-  const [clientes, setClientes] = useState("")
-  console.log(clientes)
+  const [clientes, setClientes] = useState([])
   
+
+  const getClientes = async () => {
+    try {
+      let response = await axios("http://localhost:5001/api/cliente")
+      console.log(response.data)
+      setClientes(response.data)
+    }catch(err){
+      console.log(err)
+    }
+  }
  
   useEffect(() => {
-    const getClientes = async () => {
-      try {
-        let response = await axios("http://localhost:5001/api/cliente")
-        console.log(response)
-        setClientes(response)
-      }catch(err){
-        console.log(err)
-      }
-    }
-    getClientes() //¿por qué tengo que ponerlo aquí, en lugar de fuera?
-  }, [clientes]) // sin poner clientes, hacerlo para que se ejecute solo al iniciar el componete
+    getClientes() 
+  } ,[]) // [] solo se ejecutará cuando se monta el componente la primera vez
   
  
   return (
     <div>
-      aquí mostrará todos los clientes
+    {  clientes.map((cliente,index)=>{
+
+          return (
+            <p key={index}>{cliente.nombre}</p>
+          )
+      })}
     </div>
   )
 }
