@@ -1,34 +1,13 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import axios from 'axios';
-const qs = require('qs'); //según postman me hace falta para que funcione el axios && ¿POR QUÉ? 
-
-
-//import Email from '../components/Email'
-//import Password from '../components/Password'
-
-// const LoguinCliente = () => {
-//   return (
-//     <div>
-//       Loguin Cliente
-//       <Email name="usuario"/>
-//       <Password/>
-//       <Button type="primary">Loguin</Button>
-//     </div>
-//   )
-// }
-
-// export default LoguinCliente
-
 //rafce
 
 
-const LoguinCliente = () => {
+const LoginCliente = () => {
   const onFinish = async(values) => {  //Tengo qeu meterle un try catch, ejemplo al final de éste documento
     console.log('Success:', values);  
     //let response = await axios.post("http://localhost:5001/api/loginCliente/login",JSON.stringify(values))
-    //console.log(response)
-    //const { email , pass } = values
    
     var config = {
       method: 'post',
@@ -86,7 +65,7 @@ const LoguinCliente = () => {
 };
 
 
-export default LoguinCliente
+export default LoginCliente
 
 
 /* 
