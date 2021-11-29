@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import axios from 'axios';
+//import TitleLogin from '../components/login';
 //rafce
 
 
@@ -63,6 +64,7 @@ const LoginCliente = () => {
     </Form>
   );
 };
+
 
 
 export default LoginCliente
