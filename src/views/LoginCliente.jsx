@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import axios from 'axios';
-//import TitleLogin from '../components/login';
+import TitleLogin from '../components/Login';
 //rafce
 
 
@@ -27,41 +27,46 @@ const LoginCliente = () => {
     console.log('Failed:', errorInfo);
   };
 
+// en lugar de un div he de colocarle el elemento que  hace que no sea un elimento nuevo <> </> no me suele gustar mucho, 
+//¿el otro qeu tal es?
   return (
-    <Form
-      labelCol={{ span: 8 }} //responsive ver
-      wrapperCol={{ span: 16 }} //responsive ver
-      initialValues={{ remember: true }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete="on"
-    >
-      <Form.Item
-        label="Email"
-        name="email"
-        rules={[{ required: true, message: 'Introduzca un Email válido' }]} //mensaje de error
+    <div>
+      <TitleLogin />
+      <Form
+        labelCol={{ span: 8 }} //responsive ver
+        wrapperCol={{ span: 16 }} //responsive ver
+        initialValues={{ remember: true }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        autoComplete="on"
       >
-        <Input placeholder="introduce tu Email" />
-      </Form.Item>
+        <Form.Item
+          label="Email"
+          name="email"
+          rules={[{ required: true, message: 'Introduzca un Email válido' }]} //mensaje de error
+        >
+          <Input placeholder="introduce tu Email" />
+        </Form.Item>
 
-      <Form.Item
-        label="Contraseña"
-        name="pass"
-        rules={[{ required: true, message: 'Introduzca su Contraseña' }]}
-      >
-        <Input.Password placeholder="introduce tu contraseña" />
-      </Form.Item>
+        <Form.Item
+          label="Contraseña"
+          name="pass"
+          rules={[{ required: true, message: 'Introduzca su Contraseña' }]}
+        >
+          <Input.Password placeholder="introduce tu contraseña" />
+        </Form.Item>
 
-      <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-        <Checkbox>Recuerdame</Checkbox>
-      </Form.Item>
+        <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
+          <Checkbox>Recuerdame</Checkbox>
+        </Form.Item>
 
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
-          Login
-        </Button>
-      </Form.Item>
-    </Form>
+        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+          <Button type="primary" htmlType="submit">
+            Login
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
   );
 };
 
