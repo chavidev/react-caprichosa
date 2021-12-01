@@ -19,7 +19,9 @@ const LoginCliente = () => {
     let response = await axios(config)
     //let response = await axios.post('http://localhost:5001/api/loginCliente/login',values)
     console.log(response)
-    let res = JSON.stringify(response.data.token)
+    //let res = JSON.stringify(response.data.token)
+    let res = response.data.token
+    //localStorage.setItem('tokenCliente', JSON.parse(res))
     localStorage.setItem('tokenCliente', res)
   };
 

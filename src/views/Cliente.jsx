@@ -12,7 +12,7 @@ const Cliente = () => {
       console.log("token:",tokenCliente)
       var config = {
         method: 'get',
-        url: `http://localhost:5001/api/cliente`,
+        url: `http://localhost:5001/api/cliente/myaccount`,
         headers: { 
           'authorization': `Bearer ${tokenCliente}`
         }
@@ -32,7 +32,6 @@ const Cliente = () => {
  //alternativa react.fragment
   return (
     <>
-      <p> hola colega</p>
       <p >{cliente.nombre}</p>
       <p >{cliente.email}</p>
     </>
