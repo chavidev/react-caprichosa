@@ -1,6 +1,8 @@
 import React from 'react'
-import axios from 'axios'
 import { useEffect,useState } from 'react'
+import axios from 'axios'
+import { Card } from 'antd';
+//import
 
 const Cliente = () => {
 
@@ -32,8 +34,18 @@ const Cliente = () => {
  //alternativa react.fragment
   return (
     <>
-      <p >{cliente.nombre}</p>
-      <p >{cliente.email}</p>
+      <div className="card-cliente-parent" id="card_cliente">
+        <Card title="Mis datos"  style={{ width: 300 }}>          
+          <img src="https://joeschmoe.io/api/v1/joe" alt="avatar" />
+          <p>Nombre</p>
+          <p>{cliente.nombre}</p>
+          <p>Email:</p>
+          <p>{cliente.email}</p>
+          <p>Teléfono:</p>
+          <p>{cliente.telefono}</p>
+        </Card>
+      </div>
+      
     </>
   )
 }
