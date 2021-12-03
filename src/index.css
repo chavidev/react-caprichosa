@@ -22,3 +22,13 @@ code {
 .card-cliente-parent img {
   margin-bottom: 30px; /* he de colocar un % del ¿vh? ancho o alto de la pantalla */
 }
+
+.boton-editar{
+  background:#faad14; 
+}
+.boton-cancelar{
+  background:#1890ff ;
+}
+.boton-guardar{
+  background: #52c41a;
+}

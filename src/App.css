@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.boton-editar{
+  background-color:#faad14 !important; 
+}
+.boton-cancel{
+  background-color:#1890ff !important;
+}
+.boton-guardar{
+  background-color: #52c41a !important;
+}
