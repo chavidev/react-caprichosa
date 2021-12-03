@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LoguinAdmin = () => {
+const LoginAdmin = () => {
   return (
     <div>
       Loguin Admin
@@ -8,4 +8,4 @@ const LoguinAdmin = () => {
   )
 }
 
-export default LoguinAdmin
+export default LoginAdmin
