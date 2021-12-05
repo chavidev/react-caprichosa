@@ -219,6 +219,11 @@ const Cliente = () => {
                 visible={isModalVisible}
                 onOk={handleOk}
                 onCancel={handleCancel}
+                footer={[
+                  <Button key="back" type="primary" onClick={handleCancel}>
+                    Cancel
+                  </Button>
+                ]}
               >
                 <Text type="danger">
                   ¿Estás seguro que quieres eliminar definitivamente tus datos?
