@@ -1,0 +1,12 @@
+const [disabled, setDisabled] = React.useState(true);
+
+const toggle = () => {
+  setDisabled(!disabled);
+
+
+<Switch disabled={disabled} defaultChecked />
+      <br />
+      <Button type="primary" onClick={toggle}>
+        abilitr el botón eliminar
+      </Button>
+

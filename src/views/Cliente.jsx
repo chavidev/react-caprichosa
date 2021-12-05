@@ -1,13 +1,39 @@
 import React from 'react'
 import qs from 'qs'
 import { useEffect, useState, useRef } from 'react'
+import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import { Card, Switch, Button, Form, Input, Typography, Modal } from 'antd'
 const { Text } = Typography
 
 const Cliente = () => {
   const [cliente, setCliente] = useState({})
-  const [disabled, setDisabled] = useState(false) // la palabra React no me cuadra, ¿se puede quitar?
+  const [disabled, setDisabled] = useState(false) //editar
+
+  const [deleteButon, setDeleteButon] = React.useState(true) //botón eliminar definitivamente
+  const toggleDeleteButon = async () => {
+    let confirmationInput = await inputRef.current.input.value //&&¿se puede hacer cejor?
+    if (parseInt(cliente.id_cliente, 10) === parseInt(confirmationInput, 10)) {
+      //&& la condición seguro que se puede hace mejor
+      setDeleteButon(false)
+    } else {
+      setDeleteButon(true)
+    }
+  }
+  const deleteCliente = async () => {
+    try {
+      let config = {
+        method: 'delete',
+        url: `http://localhost:5001/api/cliente/${cliente.id_cliente}`
+      }
+      let response = await axios(config)
+      console.log(`Se ha eliminado el cliente ${cliente.id_cliente}
+      en src/views/Cliente.jsx`)
+      console.log(response)
+    } catch (err) {
+      console.err(err) // falta por ponerlo de la forma correcta err.message err.parecido y el otro sistema
+    }
+  }
   //#########################################################
 
   const [isModalVisible, setIsModalVisible] = useState(false)
@@ -68,7 +94,7 @@ const Cliente = () => {
     var data = qs.stringify({
       ...dataForm //tengo qeu hacer un destructuring para que funcione
     })
-    console.log(`data:_______________${data}`)
+    console.log(`data:${data}`)
     var config = {
       method: 'put',
       url: `http://localhost:5001/api/cliente/${cliente.id_cliente}`,
@@ -79,7 +105,7 @@ const Cliente = () => {
       data: data //{...data} hay qeu hacer un destrúcturing
     }
 
-    //&& al punto then, tengo que poder extraerle la función y quitar el .then
+    //&& al punto then, tengo que poder extraerle la función y quitar el .then => try catch
     await axios(config) //&& sin await también funciona, ¿se lo pongo?
       .then(function (response) {
         getCliente() //&& ¿forma correcta de actualizar la llamada a los clientes?
@@ -204,10 +230,12 @@ const Cliente = () => {
                 <br />
                 <Text type="danger">{cliente.id_cliente}</Text>
                 <br />
-                <Input ref={inputRef} />
-                <Button danger disabled>
-                  eliminar definitivamente
-                </Button>
+                <Input ref={inputRef} onChange={toggleDeleteButon} />
+                <NavLink to={`/farewellclient`}>
+                  <Button disabled={deleteButon} danger onClick={deleteCliente}>
+                    eliminar definitivamente
+                  </Button>
+                </NavLink>
               </Modal>
             </>
           )}

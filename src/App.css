@@ -37,7 +37,8 @@
   }
 }
 
-.card-cliente-parent {
+.card-cliente-parent,
+.card-client-farewell {
   display: flex;
   background-color: rgba(199, 218, 218, 0.253);
   /* text-align: center; */
