@@ -5,12 +5,13 @@ import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import { Card, Switch, Button, Form, Input, Typography, Modal } from 'antd'
 import SpinnerCuadrado from '../components/Spinner'
+import useSpinner from '../providers/SpinnerProvider'
 const { Text } = Typography
 
 const Cliente = () => {
   const [cliente, setCliente] = useState({})
   const [disabled, setDisabled] = useState(false) //editar
-
+  const { loading, setLoading } = useSpinner()
   const [deleteButon, setDeleteButon] = React.useState(true) //botón eliminar definitivamente
   const toggleDeleteButon = async () => {
     let confirmationInput = await inputRef.current.input.value //&&¿se puede hacer cejor?
@@ -68,6 +69,7 @@ const Cliente = () => {
 
   const getCliente = async () => {
     try {
+      setLoading(true)
       let tokenCliente = localStorage.getItem('tokenCliente')
       console.log('token:', tokenCliente)
       var config = {
@@ -80,6 +82,7 @@ const Cliente = () => {
       let response = await axios(config)
       console.log(response)
       setCliente(response.data)
+      setLoading(false)
     } catch (err) {
       console.log(err)
     }
@@ -105,7 +108,7 @@ const Cliente = () => {
       },
       data: data //{...data} hay qeu hacer un destrúcturing
     }
-
+    //setLoading(true)
     //&& al punto then, tengo que poder extraerle la función y quitar el .then => try catch
     await axios(config) //&& sin await también funciona, ¿se lo pongo?
       .then(function (response) {
@@ -115,18 +118,18 @@ const Cliente = () => {
       .catch(function (error) {
         console.log(error)
       })
+    //setLoading(false)
     toggle()
   }
 
   //alternativa react.fragment
   return (
     <>
-      <SpinnerCuadrado></SpinnerCuadrado>
       <p>¿Esto va con un useState?, o hay otra forma</p>
       <div className="card-cliente-parent" id="card_cliente">
         <Card title="Mis datos" style={{ width: 300 }}>
           <img src="https://joeschmoe.io/api/v1/joe" alt="avatar" />
-
+          {loading && <SpinnerCuadrado />}
           <Switch value={disabled} checked={disabled} onClick={toggle} />
           {/* onClick={toggle} defaultChecked disabled={disabled} */}
           <br />
@@ -144,6 +147,7 @@ const Cliente = () => {
               </Button>
             </>
           )}
+
           {!disabled ? (
             <>
               <p>Nombre</p>
