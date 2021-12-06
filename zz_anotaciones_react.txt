@@ -10,3 +10,28 @@ const toggle = () => {
         abilitr el botón eliminar
       </Button>
 
+
+email: "CLIENTE_29@gmail.com"
+id_cliente: 29
+nombre: "cliente 29"
+pass: "pass_cliente"
+telefono: 123456790
+
+
+qeu pasada el router nuevo de React
+
+aquí está un tutorial que está genial, pienso que es tan rebolucionario como cuando sacaron los hooks, 
+pero en las redes no le han dado demasiada importancia
+¿será qeu los desarrolladores ya no tienen tiempo ni para las redes?
+
+
+que me guarde los datos automáticamente en mongo ya lo tengo, solo me falta ésto para ir mas rápido
+
+UPS, para ver "tu cuenta" es necesario estar logueado
+que lleve a la página qeu lo envió
+
+
+
+https://framerusercontent.com/modules/NQ9LlTfXzHTRhTTi6qMI/tXuubIdpb4aq5IPqZT6G/Loading.js#Loading
+
+

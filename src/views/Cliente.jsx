@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import { Card, Switch, Button, Form, Input, Typography, Modal } from 'antd'
+import SpinnerCuadrado from '../components/Spinner'
 const { Text } = Typography
 
 const Cliente = () => {
@@ -120,6 +121,8 @@ const Cliente = () => {
   //alternativa react.fragment
   return (
     <>
+      <SpinnerCuadrado></SpinnerCuadrado>
+      <p>¿Esto va con un useState?, o hay otra forma</p>
       <div className="card-cliente-parent" id="card_cliente">
         <Card title="Mis datos" style={{ width: 300 }}>
           <img src="https://joeschmoe.io/api/v1/joe" alt="avatar" />
