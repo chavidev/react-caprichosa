@@ -37,6 +37,18 @@
   }
 }
 
+.card-cliente-parent,
+.card-client-farewell {
+  display: flex;
+  background-color: rgba(199, 218, 218, 0.253);
+  /* text-align: center; */
+  justify-content: center;
+}
+.card-cliente-parent img {
+  margin-bottom: 30px; /* he de colocar un % del ¿vh? ancho o alto de la pantalla */
+}
+
+/* 
 .boton-editar{
   background-color:#faad14 !important; 
 }
@@ -45,4 +57,4 @@
 }
 .boton-guardar{
   background-color: #52c41a !important;
-}
+} */
