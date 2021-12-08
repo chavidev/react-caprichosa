@@ -1,20 +1,27 @@
 import React from 'react'
 import qs from 'qs'
 import { useEffect, useState, useRef } from 'react'
+//import { useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
 import { Card, Switch, Button, Form, Input, Typography, Modal } from 'antd'
 import SpinnerCuadrado from '../components/Spinner'
 import useSpinner from '../providers/SpinnerProvider'
-const { Text } = Typography
+import useModalEliminarCliente from '../providers/ModalEliminarClienteProvider'
+const { Text } = Typography //no entiendo por que no lo puedo poner en la línea superior
+//################################################
+//import ModalEliminarCliente from '../components/ModalEliminarCliente'
+
+//###############################################
 
 const Cliente = () => {
   const [cliente, setCliente] = useState({})
   const [disabled, setDisabled] = useState(false) //editar
   const { loading, setLoading } = useSpinner()
+  const { showModal, isModalVisible, handleOk, handleCancel, inputRef } = useModalEliminarCliente() //setIsModalVisible, NO ME HACE FALTA
   const [deleteButon, setDeleteButon] = React.useState(true) //botón eliminar definitivamente
   const toggleDeleteButon = async () => {
-    let confirmationInput = await inputRef.current.input.value //&&¿se puede hacer cejor?
+    let confirmationInput = await inputRef.current.input.value //&&¿se puede hacer mejor?
     if (parseInt(cliente.id_cliente, 10) === parseInt(confirmationInput, 10)) {
       //&& la condición seguro que se puede hace mejor
       setDeleteButon(false)
@@ -37,7 +44,7 @@ const Cliente = () => {
     }
   }
   //#########################################################
-
+  /* 
   const [isModalVisible, setIsModalVisible] = useState(false)
 
   const showModal = () => {
@@ -53,10 +60,11 @@ const Cliente = () => {
 
   const handleCancel = () => {
     setIsModalVisible(false)
-  }
+  } */
   //##########################################################
+
   const formRef = useRef(null) //botton guardar desde fuera del formulario
-  const inputRef = useRef(0)
+  //const inputRef = useRef(0)
 
   const toggle = () => {
     setDisabled(!disabled)
@@ -128,7 +136,9 @@ const Cliente = () => {
       <p>¿Esto va con un useState?, o hay otra forma</p>
       <div className="card-cliente-parent" id="card_cliente">
         <Card title="Mis datos" style={{ width: 300 }}>
-          <img src="https://joeschmoe.io/api/v1/joe" alt="avatar" />
+          <img src="https://joeschmoe.io/api/v1/joe" alt="avatar" style={{ width: 100 }} />
+          {/* style={{ width: 300 }} no termino de entender por que tiene dol llaves */}
+          <br />
           {loading && <SpinnerCuadrado />}
           <Switch value={disabled} checked={disabled} onClick={toggle} />
           {/* onClick={toggle} defaultChecked disabled={disabled} */}

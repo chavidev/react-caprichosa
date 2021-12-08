@@ -5,12 +5,15 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { SpinnerStateProvider } from './providers/SpinnerProvider'
+import { ModalStateProvider } from './providers/ModalEliminarClienteProvider'
 
 ReactDOM.render(
   <BrowserRouter>
-    <SpinnerStateProvider>
-      <App />
-    </SpinnerStateProvider>
+    <ModalStateProvider>
+      <SpinnerStateProvider>
+        <App />
+      </SpinnerStateProvider>
+    </ModalStateProvider>
   </BrowserRouter>,
 
   document.getElementById('root')
