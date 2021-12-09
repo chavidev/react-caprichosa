@@ -3,6 +3,7 @@ import { Card, Switch, Button, Form, Input, Typography } from 'antd'
 import SpinnerCuadrado from '../components/Spinner'
 import useModalEliminarCliente from '../providers/ModalEliminarClienteProvider'
 import ModalEliminarCliente from '../components/ModalEliminarCliente'
+import Botones from '../components/Botones'
 const { Text } = Typography
 
 const Cliente = () => {
@@ -45,24 +46,9 @@ const Cliente = () => {
           {/* style={{ width: 300 }} no termino de entender por que tiene dol llaves */}
           <br />
           {loading && <SpinnerCuadrado />}
-          <Switch value={disabled} checked={disabled} onClick={toggle} />
-          {/* onClick={toggle} defaultChecked disabled={disabled} */}
+          {!loading && <Switch value={disabled} checked={disabled} onClick={toggle} />}
           <br />
-          {!disabled ? (
-            <Button type="primary" onClick={toggle}>
-              Editar
-            </Button>
-          ) : (
-            <>
-              <Button type="default" onClick={toggle}>
-                Cancelar
-              </Button>
-              <Button type="primary" onClick={guardar}>
-                Guardar
-              </Button>
-            </>
-          )}
-
+          {!loading && <Botones />}
           {!disabled ? (
             <>
               <p>Nombre</p>
