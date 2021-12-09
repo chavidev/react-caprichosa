@@ -1,13 +1,17 @@
 import React, { createContext, useContext, useState, useRef } from 'react'
+import qs from 'qs'
 import axios from 'axios'
 
 import { NavLink } from 'react-router-dom'
+import useSpinner from './SpinnerProvider'
 
 const ModalEliminarClienteContext = createContext()
 export const ModalStateProvider = props => {
   const [cliente, setCliente] = useState({}) //&&confirmar qeu la expoortación es correcta
   const [deleteButon, setDeleteButon] = React.useState(true) //botón eliminar definitivamente
   const inputRef = useRef(0) //input de validación con el número de cliente
+  const [disabled, setDisabled] = useState(false) //editar
+  const { loading, setLoading } = useSpinner()
 
   const toggleDeleteButon = async () => {
     let confirmationInput = await inputRef.current.input.value //&&¿se puede hacer mejor?
@@ -50,6 +54,65 @@ export const ModalStateProvider = props => {
     setIsModalVisible(false)
   }
 
+  const formRef = useRef(null) //botton guardar desde fuera del formulario
+  //const inputRef = useRef(0)
+
+  const toggle = () => {
+    setDisabled(!disabled)
+    console.log(`disabled:${disabled}`)
+  }
+
+  const getCliente = async () => {
+    try {
+      setLoading(true)
+      let tokenCliente = localStorage.getItem('tokenCliente')
+      console.log('token:', tokenCliente)
+      var config = {
+        method: 'get',
+        url: `http://localhost:5001/api/cliente/myaccount`,
+        headers: {
+          authorization: `Bearer ${tokenCliente}`
+        }
+      }
+      let response = await axios(config)
+      console.log(response)
+      setCliente(response.data)
+      setLoading(false)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const guardar = async () => {
+    const dataForm = await formRef.current?.validateFields() // validateFields() es validación de ant // ? evitaerrores si entra undefine, pero aquí no haría falta
+
+    var data = qs.stringify({
+      ...dataForm //tengo qeu hacer un destructuring para que funcione
+    })
+    console.log(`data:${data}`)
+    var config = {
+      method: 'put',
+      url: `http://localhost:5001/api/cliente/${cliente.id_cliente}`,
+      //url: 'http://localhost:5001/api/cliente/27',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      data: data //{...data} hay qeu hacer un destrúcturing
+    }
+    //setLoading(true)
+    //&& al punto then, tengo que poder extraerle la función y quitar el .then => try catch
+    await axios(config) //&& sin await también funciona, ¿se lo pongo?
+      .then(function (response) {
+        getCliente() //&& ¿forma correcta de actualizar la llamada a los clientes?
+        //console.log('response axios:', JSON.stringify(response.data))
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+    //setLoading(false)
+    toggle()
+  }
+
   return (
     <ModalEliminarClienteContext.Provider
       value={{
@@ -64,7 +127,15 @@ export const ModalStateProvider = props => {
         isModalVisible,
         showModal,
         handleOk,
-        handleCancel
+        handleCancel,
+        formRef,
+        toggle,
+        disabled,
+        setDisabled,
+        getCliente,
+        loading,
+        setLoading,
+        guardar
       }}
     >
       {/* {loading && <SpinnerCuadrado />} */}

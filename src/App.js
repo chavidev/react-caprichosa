@@ -7,6 +7,7 @@ import LoginCliente from './views/LoginCliente'
 import ClientesTodos from './views/ClientesTodos'
 import Cliente from './views/Cliente'
 import FarewellClient from './views/FarewellClient'
+import { ModalStateProvider } from './providers/ModalEliminarClienteProvider'
 function App() {
   return (
     <div className="App">
@@ -16,7 +17,14 @@ function App() {
         <Route path="/loginadmin" element={<LoginAdmin />} />
         <Route path="/login" element={<LoginCliente />} />
         <Route path="/clientes" element={<ClientesTodos />} />
-        <Route path="/cliente" element={<Cliente />} />
+        <Route
+          path="/cliente"
+          element={
+            <ModalStateProvider>
+              <Cliente />
+            </ModalStateProvider>
+          }
+        />
         <Route path="/farewellclient" element={<FarewellClient />} />
       </Routes>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
-import qs from 'qs'
-import { useEffect, useState, useRef } from 'react' // useRef  movido al provider
+//import qs from 'qs'
+import { useEffect, useState } from 'react' // useRef  movido al provider
 //import { useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
@@ -16,8 +16,8 @@ const { Text } = Typography //no entiendo por que no lo puedo poner en la línea
 
 const Cliente = () => {
   //const [cliente, setCliente] = useState({})
-  const [disabled, setDisabled] = useState(false) //editar
-  const { loading, setLoading } = useSpinner()
+  //const [disabled, setDisabled] = useState(false) //editar
+  //const { loading, setLoading } = useSpinner()
   const {
     cliente,
     setCliente,
@@ -30,7 +30,15 @@ const Cliente = () => {
     inputRef,
     toggleDeleteButon,
     confirmationInput,
-    deleteCliente
+    deleteCliente,
+    formRef,
+    toggle,
+    disabled,
+    setDisabled,
+    getCliente,
+    loading,
+    setLoading,
+    guardar
   } = useModalEliminarCliente() //setIsModalVisible, NO ME HACE FALTA
   //const [deleteButon, setDeleteButon] = React.useState(true) //botón eliminar definitivamente
   //&& React.useState(true)  ¿que pasa si no pongo React?
@@ -79,18 +87,18 @@ const Cliente = () => {
   } */
   //##########################################################
 
-  const formRef = useRef(null) //botton guardar desde fuera del formulario
+  //  const formRef = useRef(null) //botton guardar desde fuera del formulario
   //const inputRef = useRef(0)
 
-  const toggle = () => {
+  /*   const toggle = () => {
     setDisabled(!disabled)
     console.log(`disabled:${disabled}`)
-  }
+  } */
 
   const onFinishFailed = errorInfo => {
     console.log('Failed:', errorInfo)
   }
-
+  /* 
   const getCliente = async () => {
     try {
       setLoading(true)
@@ -111,11 +119,12 @@ const Cliente = () => {
       console.log(err)
     }
   }
+ */
 
   useEffect(() => {
     getCliente()
   }, [])
-
+  /* 
   const guardar = async () => {
     const dataForm = await formRef.current?.validateFields() // validateFields() es validación de ant // ? evitaerrores si entra undefine, pero aquí no haría falta
 
@@ -145,7 +154,7 @@ const Cliente = () => {
     //setLoading(false)
     toggle()
   }
-
+ */
   //alternativa react.fragment
   return (
     <>
@@ -248,37 +257,6 @@ const Cliente = () => {
                 Eliminar mis datos
               </Button>
               <ModalEliminarCliente />
-
-              {/* 
-              <Modal
-                title="Eliminar mis datos DEFINITIVAMENTE"
-                visible={isModalVisible}
-                onOk={handleOk}
-                onCancel={handleCancel}
-                footer={[
-                  <Button key="back" type="primary" onClick={handleCancel}>
-                    Cancel
-                  </Button>
-                ]}
-              >
-                <Text type="danger">
-                  ¿Estás seguro que quieres eliminar definitivamente tus datos?
-                </Text>
-                <br />
-                <Text type="danger">ÉSTA ACCIÓN NO TIENE MARCHA ATRÁS</Text>
-                <br />
-                <Text>Pon tu número de cliente para confirmar: </Text>
-                <br />
-                <Text type="danger">{cliente.id_cliente}</Text>
-                <br />
-                <Input ref={inputRef} onChange={toggleDeleteButon} />
-                <NavLink to={`/farewellclient`}>
-                  <Button disabled={deleteButon} danger onClick={deleteCliente}>
-                    eliminar definitivamente
-                  </Button>
-                </NavLink>
-              </Modal>
-*/}
             </>
           )}
         </Card>
