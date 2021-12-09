@@ -1,6 +1,6 @@
 import React from 'react'
 import qs from 'qs'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react' // useRef  movido al provider
 //import { useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import axios from 'axios'
@@ -8,18 +8,33 @@ import { Card, Switch, Button, Form, Input, Typography, Modal } from 'antd'
 import SpinnerCuadrado from '../components/Spinner'
 import useSpinner from '../providers/SpinnerProvider'
 import useModalEliminarCliente from '../providers/ModalEliminarClienteProvider'
+import ModalEliminarCliente from '../components/ModalEliminarCliente'
 const { Text } = Typography //no entiendo por que no lo puedo poner en la línea superior
 //################################################
-//import ModalEliminarCliente from '../components/ModalEliminarCliente'
 
 //###############################################
 
 const Cliente = () => {
-  const [cliente, setCliente] = useState({})
+  //const [cliente, setCliente] = useState({})
   const [disabled, setDisabled] = useState(false) //editar
   const { loading, setLoading } = useSpinner()
-  const { showModal, isModalVisible, handleOk, handleCancel, inputRef } = useModalEliminarCliente() //setIsModalVisible, NO ME HACE FALTA
-  const [deleteButon, setDeleteButon] = React.useState(true) //botón eliminar definitivamente
+  const {
+    cliente,
+    setCliente,
+    deleteButon,
+    setDeleteButon,
+    showModal,
+    isModalVisible,
+    handleOk,
+    handleCancel,
+    inputRef,
+    toggleDeleteButon,
+    confirmationInput,
+    deleteCliente
+  } = useModalEliminarCliente() //setIsModalVisible, NO ME HACE FALTA
+  //const [deleteButon, setDeleteButon] = React.useState(true) //botón eliminar definitivamente
+  //&& React.useState(true)  ¿que pasa si no pongo React?
+  /* 
   const toggleDeleteButon = async () => {
     let confirmationInput = await inputRef.current.input.value //&&¿se puede hacer mejor?
     if (parseInt(cliente.id_cliente, 10) === parseInt(confirmationInput, 10)) {
@@ -42,7 +57,8 @@ const Cliente = () => {
     } catch (err) {
       console.err(err) // falta por ponerlo de la forma correcta err.message err.parecido y el otro sistema
     }
-  }
+  } */
+
   //#########################################################
   /* 
   const [isModalVisible, setIsModalVisible] = useState(false)
@@ -231,6 +247,9 @@ const Cliente = () => {
               <Button type="primary" danger onClick={showModal}>
                 Eliminar mis datos
               </Button>
+              <ModalEliminarCliente />
+
+              {/* 
               <Modal
                 title="Eliminar mis datos DEFINITIVAMENTE"
                 visible={isModalVisible}
@@ -259,6 +278,7 @@ const Cliente = () => {
                   </Button>
                 </NavLink>
               </Modal>
+*/}
             </>
           )}
         </Card>
