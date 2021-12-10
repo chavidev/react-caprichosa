@@ -4,6 +4,7 @@ import SpinnerCuadrado from '../components/Spinner'
 import useModalEliminarCliente from '../providers/ModalEliminarClienteProvider'
 import ModalEliminarCliente from '../components/ModalEliminarCliente'
 import Botones from '../components/Botones'
+import Imagen from '../components/Imagen'
 const { Text } = Typography
 
 const Cliente = () => {
@@ -42,8 +43,8 @@ const Cliente = () => {
     <>
       <div className="card-cliente-parent" id="card_cliente">
         <Card title="Mis datos" style={{ width: 300 }}>
-          <img src="https://joeschmoe.io/api/v1/joe" alt="avatar" style={{ width: 100 }} />
           {/* style={{ width: 300 }} no termino de entender por que tiene dol llaves */}
+          <Imagen />
           <br />
           {loading && <SpinnerCuadrado />}
           {!loading && <Switch value={disabled} checked={disabled} onClick={toggle} />}
