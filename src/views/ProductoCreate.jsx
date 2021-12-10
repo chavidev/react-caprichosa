@@ -1,5 +1,7 @@
-import React } from 'react'
-import useProductoProvider from '../providers/productoProvider'
+import { React } from 'react'
+import NuevoProducto from '../components/NuevoProducto'
+import useProductoProvider from '../providers/ProductoProvider'
+import { Card, Switch, Button, Form, Input, Typography } from 'antd'
 // import { Card, Switch, Button, Form, Input, Typography } from 'antd'
 // import SpinnerCuadrado from '../components/Spinner'
 // import Botones from '../components/Botones'
@@ -8,9 +10,17 @@ import useProductoProvider from '../providers/productoProvider'
 // const { Text } = Typography
 
 const ProductoCreate = () => {
-  const {} = useProductoProvider()
+  const { newProducto, setNewProducto } = useProductoProvider()
 
-  return <></>
+  return (
+    <>
+      <div className="card-cliente-parent" id="card_cliente">
+        <Card title="Nuevo producto" style={{ width: 500 }}>
+          <NuevoProducto />
+        </Card>
+      </div>
+    </>
+  )
 }
 
 export default ProductoCreate

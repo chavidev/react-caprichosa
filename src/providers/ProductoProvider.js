@@ -1,14 +1,15 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState, useRef } from 'react'
 
 const ProductoContext = createContext()
 export const ProductoProvider = props => {
-  const [producto, setProducto] = useState({})
-
+  const [newProducto, setNewProducto] = useState({})
+  const formRef = useRef()
   return (
     <ProductoContext.Provider
       value={{
-        producto,
-        setProducto
+        newProducto,
+        setNewProducto,
+        formRef
       }}
     >
       {/* && ¿props.children no me hace falta con mi estructura? */}

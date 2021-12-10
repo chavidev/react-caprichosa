@@ -9,6 +9,7 @@ import Cliente from './views/Cliente'
 import FarewellClient from './views/FarewellClient'
 import { ModalStateProvider } from './providers/ModalEliminarClienteProvider'
 import { ProductoProvider } from './providers/ProductoProvider'
+import ProductoCreate from './views/ProductoCreate'
 function App() {
   return (
     <div className="App">
@@ -31,7 +32,7 @@ function App() {
           path="/productocreate"
           element={
             <ProductoProvider>
-              <Cliente />
+              <ProductoCreate />
             </ProductoProvider>
           }
         />
