@@ -8,6 +8,7 @@ import ClientesTodos from './views/ClientesTodos'
 import Cliente from './views/Cliente'
 import FarewellClient from './views/FarewellClient'
 import { ModalStateProvider } from './providers/ModalEliminarClienteProvider'
+import { ProductoProvider } from './providers/ProductoProvider'
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,14 @@ function App() {
           }
         />
         <Route path="/farewellclient" element={<FarewellClient />} />
+        <Route
+          path="/productocreate"
+          element={
+            <ProductoProvider>
+              <Cliente />
+            </ProductoProvider>
+          }
+        />
       </Routes>
     </div>
   )
