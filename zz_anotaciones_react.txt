@@ -1,53 +1,93 @@
-const [disabled, setDisabled] = React.useState(true);
-
-const toggle = () => {
-  setDisabled(!disabled);
-
-
-<Switch disabled={disabled} defaultChecked />
-      <br />
-      <Button type="primary" onClick={toggle}>
-        abilitr el botón eliminar
-      </Button>
+id_producto: { type: Number, required: false, unique: true }, //¿FontFaceSetLoadEvent? qwue hacia el ejemplo aquí
+  ref: { type: String },
+  nombre: { type: String, required: false },
+  precio_coste: { type: Number, required: false }, //sólo tiene qeu admitir dos decimales
+  P_V_P: { type: Number, required: false },
 
 
-email: "CLIENTE_29@gmail.com"
-id_cliente: 29
-nombre: "cliente 29"
-pass: "pass_cliente"
-telefono: 123456790
-
-
-qeu pasada el router nuevo de React
-
-aquí está un tutorial que está genial, pienso que es tan rebolucionario como cuando sacaron los hooks, 
-pero en las redes no le han dado demasiada importancia
-¿será qeu los desarrolladores ya no tienen tiempo ni para las redes?
-
-
-que me guarde los datos automáticamente en mongo ya lo tengo, solo me falta ésto para ir mas rápido
-
-UPS, para ver "tu cuenta" es necesario estar logueado
-que lleve a la página qeu lo envió
-
-
-
-https://framerusercontent.com/modules/NQ9LlTfXzHTRhTTi6qMI/tXuubIdpb4aq5IPqZT6G/Loading.js#Loading
-
-toggleDeleteButon
-deleteButon
-deleteCliente
+  atributos: [atributoSchema],
+  variaciones: [variacionSchema],
+  categoria: {
+    type: [String],
+    enum: ['CAMISA', 'PANTALON', 'CINTURON'],
+    required: false
 
 
 
 
-inputRef
-setDeleteButon
-
-toggleDeleteButon
-confirmationInput
-deleteCliente
+  }
 
 
+NuevoProducto
 
-ModalEliminarCliente
+
+<Button type="primary" icon={<DownloadOutlined />} size={size} />
+        <Button type="primary" shape="circle" icon={<DownloadOutlined />} size={size} />
+        <Button type="primary" shape="round" icon={<DownloadOutlined />} size={size} />
+
+        <Button type="primary" shape="round" icon={<DownloadOutlined />} size={size}>
+          Download
+        </Button>
+        <Button type="primary" icon={<DownloadOutlined />} size={size}>
+          Download
+        </Button>
+
+
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYjEwYzhhODJlNDhjMzc0MWU5ZWJlZCIsImlhdCI6MTYzOTE2NjE1MSwiZXhwIjoxNjM5MjAyMTUxfQ.Ucqb0qV4it5UVMmwH-yq6OkRekUDIaBXq3VmrXZ3T6g
+
+
+http://localhost:5001/api/shoppingCart
+//#############################################
+"message": "success",
+  "shoppingCart": {
+    "_id": "61b3b2250900655089d38761",
+    "id_cliente": "61b10c8a82e48c3741e9ebed",
+    "variaciones": [
+      {
+        "id_producto": "6195374be6d4b7c20122d116",
+        "id_variacion": 1183,
+        "cantidad": 1,
+        "_id": "61b3b2250900655089d38763",
+        "createdAt": "2021-12-10T20:01:41.468Z",
+        "updatedAt": "2021-12-10T20:01:41.468Z"
+      },
+      {
+        "id_producto": "6195374be6d4b7c20122d116",
+        "id_variacion": 1183,
+        "cantidad": 1,
+        "_id": "61b3b2600900655089d38767",
+        "createdAt": "2021-12-10T20:02:40.417Z",
+        "updatedAt": "2021-12-10T20:02:40.417Z"
+      },
+      {
+        "id_producto": "6195374be6d4b7c20122d116",
+        "id_variacion": 1183,
+        "cantidad": 1,
+        "_id": "61b3b3990900655089d3877e",
+        "createdAt": "2021-12-10T20:07:53.878Z",
+        "updatedAt": "2021-12-10T20:07:53.878Z"
+      },
+      {
+        "id_producto": "6195374be6d4b7c20122d116",
+        "id_variacion": 1183,
+        "cantidad": 1,
+        "_id": "61b3b3a70900655089d38784",
+        "createdAt": "2021-12-10T20:08:07.752Z",
+        "updatedAt": "2021-12-10T20:08:07.752Z"
+      },
+      {
+        "id_producto": "6195374be6d4b7c20122d116",
+        "id_variacion": 1183,
+        "cantidad": 1,
+        "_id": "61b3b4a77277f68829010742",
+        "createdAt": "2021-12-10T20:12:23.264Z",
+        "updatedAt": "2021-12-10T20:12:23.264Z"
+      }
+    ],
+    "createdAt": "2021-12-10T20:01:41.373Z",
+    "updatedAt": "2021-12-10T20:12:23.266Z",
+    "__v": 5
+  }
+}

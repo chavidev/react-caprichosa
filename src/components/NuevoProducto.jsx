@@ -3,7 +3,7 @@ import { Card, Switch, Button, Form, Input, Typography } from 'antd'
 import useProductoProvider from '../providers/ProductoProvider'
 
 const NuevoProducto = () => {
-  const { newProducto, setNewProducto, formRef } = useProductoProvider()
+  const { newProducto, setNewProducto, formRef, addAtributo } = useProductoProvider()
   return (
     <>
       <Form
@@ -127,6 +127,9 @@ const NuevoProducto = () => {
           <Input />
         </Form.Item>
       </Form>
+      <Button shape="round" type="primary" onClick={addAtributo}>
+        Añadir Atributo
+      </Button>
     </>
   )
 }
