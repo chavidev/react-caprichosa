@@ -3,9 +3,21 @@ import { Card, Switch, Button, Form, Input, Typography } from 'antd'
 import useProductoProvider from '../providers/ProductoProvider'
 
 const NuevoProducto = () => {
-  const { newProducto, setNewProducto, formRef, addAtributo } = useProductoProvider()
+  const {
+    newProducto,
+    setNewProducto,
+    formRef,
+    atributo_nuevo,
+    add_valor_atributo_nuevo,
+    newAtributoValores,
+    setNewAtributoValores,
+    create
+  } = useProductoProvider()
   return (
     <>
+      <Button shape="round" type="primary" onClick={create}>
+        Guardar
+      </Button>
       <Form
         ref={formRef}
         labelCol={{
@@ -36,7 +48,6 @@ const NuevoProducto = () => {
         >
           <Input />
         </Form.Item>
-
         <Form.Item
           label="nombre"
           name="nombre"
@@ -49,7 +60,6 @@ const NuevoProducto = () => {
         >
           <Input />
         </Form.Item>
-
         <Form.Item
           label="precio de coste"
           name="precio_coste"
@@ -62,7 +72,6 @@ const NuevoProducto = () => {
         >
           <Input />
         </Form.Item>
-
         <Form.Item
           label="PVP"
           name="P_V_P"
@@ -75,63 +84,62 @@ const NuevoProducto = () => {
         >
           <Input />
         </Form.Item>
+        {newProducto.valores.map((valor, index) => {
+          return <p key={index}>{`${valor.nombre}: ${valor.valores.join(',')}`}</p>
+        })}
+        <p>Nuevo atributo</p>
+        <Button shape="round" type="primary" onClick={atributo_nuevo}>
+          Añadir Atributo
+        </Button>
+        <Form.Item
+          label="Nombre atributo_nuevo_nombre"
+          name="atributo_nuevo_nombre"
+          rules={[
+            {
+              required: false,
+              message: 'atributo'
+            }
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          label="valor_atributo_nuevo"
+          name="valor_atributo_nuevo"
+          rules={[
+            {
+              required: false,
+              message: 'atributo'
+            }
+          ]}
+        >
+          <Input />
+        </Form.Item>
 
-        <p>Atributos_1</p>
-        <Form.Item
-          label="Atributo_nombre_1"
-          name="atributo_nombre_1"
-          rules={[
-            {
-              required: false,
-              message: 'atributo'
-            }
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          label="Atributo_valor_1"
-          name="atributo_valor_1"
-          rules={[
-            {
-              required: false,
-              message: 'atributo'
-            }
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <p>Atributos_2</p>
-        <Form.Item
-          label="Atributo_nombre_2"
-          name="atributo_nombre_2"
-          rules={[
-            {
-              required: false,
-              message: 'atributo'
-            }
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          label="Atributo_valor_2"
-          name="atributo_valor_2"
-          rules={[
-            {
-              required: false,
-              message: 'atributo'
-            }
-          ]}
-        >
-          <Input />
-        </Form.Item>
+        <Button shape="round" type="primary" onClick={add_valor_atributo_nuevo}>
+          Añadir valor_atributo_nuevo
+        </Button>
+        {newAtributoValores.map((valor, index) => {
+          return <p key={index}>{valor}</p>
+        })}
       </Form>
-      <Button shape="round" type="primary" onClick={addAtributo}>
-        Añadir Atributo
-      </Button>
     </>
   )
 }
 
 export default NuevoProducto
+
+/* 
+<Form.Item
+label="Atributo_valor_2"
+name="atributo_valor_2"
+rules={[
+  {
+    required: false,
+    message: 'atributo'
+  }
+]}
+>
+<Input />
+</Form.Item>
+ */
