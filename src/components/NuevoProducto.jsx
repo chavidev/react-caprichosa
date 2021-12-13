@@ -6,11 +6,11 @@ const NuevoProducto = () => {
   const {
     newProducto,
     setNewProducto,
-    formRef,
-    atributo_nuevo,
-    add_valor_atributo_nuevo,
     newAtributoValores,
     setNewAtributoValores,
+    formRef,
+    add_valor_atributo_nuevo,
+    atributo_nuevo,
     create
   } = useProductoProvider()
   return (
