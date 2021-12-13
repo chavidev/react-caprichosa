@@ -10,6 +10,14 @@ export const ProductoProvider = props => {
     console.log('newAtributoValores', newAtributoValores)
   }, [newAtributoValores])
 
+  // 1-- Ej=> atributo_nuevo:[verde, rojo, azul]
+  const add_valor_atributo_nuevo = async () => {
+    let response = await formRef.current?.validateFields()
+    console.log('valor_atributo_nuevo', response.valor_atributo_nuevo)
+    setNewAtributoValores([...newAtributoValores, response.valor_atributo_nuevo]) //newAtributo.valores.push(response.valor_atributo_nuevo))
+  }
+
+  // 2-- Ej=> color:[verde, rojo, azul]
   const atributo_nuevo = async () => {
     console.log('nuevo atributo añadido')
     //let response = await formRef.inputRef.current //.input.value
@@ -27,11 +35,8 @@ export const ProductoProvider = props => {
     setNewProducto({ ...dataForm, valores })
     setNewAtributoValores([])
   }
-  const add_valor_atributo_nuevo = async () => {
-    let response = await formRef.current?.validateFields()
-    console.log('valor_atributo_nuevo', response.valor_atributo_nuevo)
-    setNewAtributoValores([...newAtributoValores, response.valor_atributo_nuevo]) //newAtributo.valores.push(response.valor_atributo_nuevo))
-  }
+
+  //3-- crea un nuevo producto
   const create = async () => {
     const dataForm = await formRef.current?.validateFields()
     const finalProducto = newProducto.valores.map(e => ({
@@ -50,16 +55,17 @@ export const ProductoProvider = props => {
     let response = await axios(config)
     console.log(response)
   }
+
   return (
     <ProductoContext.Provider
       value={{
         newProducto,
         setNewProducto,
-        formRef,
-        atributo_nuevo,
-        add_valor_atributo_nuevo,
         newAtributoValores,
         setNewAtributoValores,
+        formRef,
+        add_valor_atributo_nuevo,
+        atributo_nuevo,
         create
       }}
     >
