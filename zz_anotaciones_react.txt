@@ -95,7 +95,13 @@ http://localhost:5001/api/shoppingCart
 
 
 formRef
+P_V_P: 20
+atributos: (2) [{…}, {…}]
+categoria: []
+id_producto: 1214
+nombre: "vestido"
+precio_coste: 10
+ref: "111111111111"
 
 
-
-
+productounico

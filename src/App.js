@@ -10,6 +10,8 @@ import FarewellClient from './views/FarewellClient'
 import { ModalStateProvider } from './providers/ModalEliminarClienteProvider'
 import { ProductoProvider } from './providers/ProductoProvider'
 import ProductoCreate from './views/ProductoCreate'
+import ProductosTodos from './views/ProductosTodos'
+import ProductoUnico from './views/ProductoUnico'
 function App() {
   return (
     <div className="App">
@@ -36,6 +38,8 @@ function App() {
             </ProductoProvider>
           }
         />
+        <Route path="/productostodos" element={<ProductosTodos />} />
+        <Route path="/productounico/:id" element={<ProductoUnico />} />
       </Routes>
     </div>
   )
