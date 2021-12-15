@@ -15,8 +15,8 @@ import ProductoUnico from './views/ProductoUnico'
 function App() {
   return (
     <div className="App">
-      <p> aquí puedo meter la nav</p>
-      <h1>Welcome to React Router!</h1>
+      <p> nav</p>
+      <h1>ReactRouter</h1>
       <Routes>
         <Route path="/loginadmin" element={<LoginAdmin />} />
         <Route path="/login" element={<LoginCliente />} />
