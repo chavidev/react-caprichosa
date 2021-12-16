@@ -12,6 +12,7 @@ import { ProductoProvider } from './providers/ProductoProvider'
 import ProductoCreate from './views/ProductoCreate'
 import ProductosTodos from './views/ProductosTodos'
 import ProductoUnico from './views/ProductoUnico'
+import ShoppingCart from './views/ShoppingCart'
 function App() {
   return (
     <div className="App">
@@ -40,6 +41,7 @@ function App() {
         />
         <Route path="/productostodos" element={<ProductosTodos />} />
         <Route path="/productounico/:id" element={<ProductoUnico />} />
+        <Route path="/shoppingcart" element={<ShoppingCart />} />
       </Routes>
     </div>
   )

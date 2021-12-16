@@ -1,10 +1,11 @@
 import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Card, Pagination, Row, Col, List, Avatar, Space } from 'antd'
+import { Card, Pagination, Row, Col, List, Avatar, Typography, Space } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons'
 const { Meta } = Card
+const { Text, Link } = Typography
 
 const ProductosTodos = () => {
   const [productos, setProductos] = useState([])
@@ -48,24 +49,26 @@ const ProductosTodos = () => {
       {text}
     </Space>
   )
-
   return (
     <div className="flex-div">
+      <Text>
+        Sabemos que eres caprichosa en el momento de eligir una prenda con la que te sientas
+        identificada, ¡estás en el sitio adecuado! contamos con 150.000 referencias, y si no
+        exietiese, creamos la prenda a tu medida.
+      </Text>
       {/* <Row>
         <Col span={12}>col-12</Col>
         <Col span={12}>col-12</Col>
       </Row> */}
       <List
-        grid={{ gutter: 16, column: 2, xs: 2, sm: 4 }}
+        grid={{ gutter: 16, column: 4, xs: 2, sm: 2, md: 4 }} /* sm: 4, */
         pagination={{
           pageSize: 4
         }}
         dataSource={productos}
         renderItem={(producto, index) => (
           <List.Item>
-            <div
-              style={{ borderColor: 'blue', borderWidth: '10px', height: '500px', width: '100%' }}
-            >
+            <div style={{ borderColor: 'blue', borderWidth: '10px', width: '100%' }}>
               <Card
                 key={index}
                 hoverable
@@ -77,9 +80,7 @@ const ProductosTodos = () => {
                   />
                 }
               >
-                <Meta title="Europe Street beat" description="www.instagram.com" />
-                <p>{producto.nombre}</p>
-                <p>{`${producto.P_V_P} €`}</p>
+                <Meta title={producto.nombre} description={`${producto.P_V_P} €`} />
 
                 {producto.atributos.map((valor, index2) => {
                   return (

@@ -2,31 +2,36 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { Card, Select, Form, Button } from 'antd'
-import { useParams } from 'react-router-dom'
-const { Option } = Select
-
 const { Meta } = Card
 
-const ProductoUnico = () => {
-  let id = useParams().id
-  const [producto, setProducto] = useState({})
+const ShoppingCart = () => {
+  const [shoppingCart, setShoppingCart] = useState({})
 
-  const getProducto = async () => {
+  const getShoppingCart = async () => {
+    console.log('inicio__getShoppingCart__________________')
     try {
-      let response = await axios(`http://localhost:5001/api/producto/${id}`)
+      let tokenCliente = localStorage.getItem('tokenCliente')
+      var config = {
+        method: 'get',
+        url: `http://localhost:5001/api/shoppingCart`,
+        headers: {
+          authorization: `Bearer ${tokenCliente}`
+        }
+      }
+      let response = await axios(config)
+      console.log('response____________________', response)
+
       console.log(response.data)
-      setProducto(response.data)
+      setShoppingCart(response.data.shoppingCart)
     } catch (err) {
       console.log(err)
     }
   }
 
   useEffect(() => {
-    getProducto()
+    getShoppingCart()
   }, [])
-
-  //maneja el select
-
+  /* 
   const onFinish = async value => {
     console.log(value)
     const variacion = producto.variaciones.find(
@@ -48,7 +53,10 @@ const ProductoUnico = () => {
 
     //##################
   }
-
+ */
+  const onFinish = () => {
+    console.log('onFinish ejecutado => COMPRADO')
+  }
   return (
     <div>
       <Card
@@ -58,29 +66,17 @@ const ProductoUnico = () => {
           <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
         }
       >
-        <Meta title={producto.nombre} description={`${producto.P_V_P} €`} />
-        <Form onFinish={onFinish}>
-          {producto.atributos?.map((valor, index2) => {
-            return (
-              <div key={index2} style={{ display: 'block' }}>
-                {valor.nombre}
-                <Form.Item name={`atributo_${index2 + 1}`}>
-                  <Select style={{ width: 120 }}>
-                    {valor.valores.map((e, i) => (
-                      <Option key={i} value={e.valor}>
-                        {e.valor}
-                      </Option>
-                    ))}
-                  </Select>
-                </Form.Item>
-              </div>
-            )
-          })}
-          <Button htmlType="submit">Añadir</Button>
-        </Form>
+        <Meta title="tittle" description="description" />
+        {shoppingCart.variaciones?.map((variacion, i) => {
+          return (
+            <div key={i} style={{ display: 'block' }}>
+              {variacion.id_variacion}
+            </div>
+          )
+        })}
       </Card>
     </div>
   )
 }
 
-export default ProductoUnico
+export default ShoppingCart

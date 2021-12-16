@@ -1,4 +1,4 @@
-/* .App {
+.App {
   text-align: center;
 }
 
@@ -27,7 +27,6 @@
 .App-link {
   color: #61dafb;
 }
- */
 
 .card-cliente-parent,
 .card-client-farewell {
@@ -66,3 +65,25 @@
 .boton-guardar{
   background-color: #52c41a !important;
 } */
+
+@media (min-width: 768px) {
+  .App {
+    width: 768px;
+    border: solid rgb(185, 111, 111) 2px;
+  }
+  .flex-div {
+    width: 724px;
+    border: solid rgb(168, 79, 190) 2px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .App {
+    width: 1024px;
+    border: solid rgb(185, 111, 111) 2px;
+  }
+  .flex-div {
+    width: 940px;
+    border: solid rgb(168, 79, 190) 2px;
+  }
+}
