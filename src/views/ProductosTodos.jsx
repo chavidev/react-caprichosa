@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 import { Card, Pagination, Row, Col, List, Avatar, Typography, Space } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons'
+import Header from '../components/Header'
+
 const { Meta } = Card
 const { Text, Link } = Typography
 
@@ -51,6 +53,7 @@ const ProductosTodos = () => {
   )
   return (
     <div className="flex-div">
+      <Header />
       <Text>
         Sabemos que eres caprichosa en el momento de eligir una prenda con la que te sientas
         identificada, ¡estás en el sitio adecuado! contamos con 150.000 referencias, y si no

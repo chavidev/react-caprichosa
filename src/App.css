@@ -65,8 +65,27 @@
 .boton-guardar{
   background-color: #52c41a !important;
 } */
+.ionicon {
+  width: 30px;
+}
+
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+  background-color: rgb(193, 203, 221);
+}
+
+.seacher {
+  border-radius: 500px;
+}
 
 @media (min-width: 768px) {
+  .search-container {
+    justify-content: end;
+  }
   .App {
     width: 768px;
     border: solid rgb(185, 111, 111) 2px;

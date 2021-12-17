@@ -105,3 +105,12 @@ ref: "111111111111"
 
 
 productounico
+
+
+onBack={() => window.history.back()}
+
+FaShoppingCart
+FaShoppingCart
+
+FaShoppingCart
+BsFillCartFill
