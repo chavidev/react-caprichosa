@@ -1,5 +1,6 @@
 import React from 'react'
 import { PageHeader, Button, Descriptions, Input, Space } from 'antd'
+import { FaSearch } from 'react-icons/fa'
 const { Search } = Input
 
 const Header = () => {
@@ -15,14 +16,16 @@ const Header = () => {
         </svg>
         <a href="./cliente">My acount</a>
 
-        <input
-          type="text"
-          placeholder="&#xF002;"
-          className="seacher"
-          onClick={onSearch}
-          style={{ width: 100, fontFamily: 'Arial, FontAwesome' }}
-        />
-        <Search />
+        <div className="icon-input">
+          <FaSearch className="icon" />
+          <input
+            type="text"
+            className="seacher"
+            placeholder="enter search terms"
+            onClick={onSearch}
+            style={{ width: 130 }}
+          />
+        </div>
       </div>
       <div className="site-page-header-ghost-wrapper">
         <PageHeader

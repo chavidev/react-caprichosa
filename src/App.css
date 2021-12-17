@@ -80,6 +80,17 @@
 
 .seacher {
   border-radius: 500px;
+  text-align: center;
+  border: none;
+}
+
+.seacher::placeholder {
+  font-size: 10px;
+}
+
+.icon-input .icon {
+  position: absolute;
+  margin: 7px;
 }
 
 @media (min-width: 768px) {
