@@ -5,6 +5,7 @@ import { Card, Pagination, Row, Col, List, Avatar, Typography, Space } from 'ant
 import { useNavigate } from 'react-router-dom'
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const { Meta } = Card
 const { Text, Link } = Typography
@@ -97,6 +98,7 @@ const ProductosTodos = () => {
           </List.Item>
         )}
       />
+      <Footer />
     </div>
   )
 }
