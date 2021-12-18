@@ -13,37 +13,40 @@ import ProductoCreate from './views/ProductoCreate'
 import ProductosTodos from './views/ProductosTodos'
 import ProductoUnico from './views/ProductoUnico'
 import ShoppingCart from './views/ShoppingCart'
+import { ShopingCartProvider } from './providers/ShopingCartProvider'
 
 function App() {
   return (
     <div className="App">
       <p> nav</p>
       <h1>ReactRouter</h1>
-      <Routes>
-        <Route path="/loginadmin" element={<LoginAdmin />} />
-        <Route path="/login" element={<LoginCliente />} />
-        <Route path="/clientes" element={<ClientesTodos />} />
-        <Route
-          path="/cliente"
-          element={
-            <ModalStateProvider>
-              <Cliente />
-            </ModalStateProvider>
-          }
-        />
-        <Route path="/farewellclient" element={<FarewellClient />} />
-        <Route
-          path="/productocreate"
-          element={
-            <ProductoProvider>
-              <ProductoCreate />
-            </ProductoProvider>
-          }
-        />
-        <Route path="/productostodos" element={<ProductosTodos />} />
-        <Route path="/productounico/:id" element={<ProductoUnico />} />
-        <Route path="/shoppingcart" element={<ShoppingCart />} />
-      </Routes>
+      <ShopingCartProvider>
+        <Routes>
+          <Route path="/loginadmin" element={<LoginAdmin />} />
+          <Route path="/login" element={<LoginCliente />} />
+          <Route path="/clientes" element={<ClientesTodos />} />
+          <Route
+            path="/cliente"
+            element={
+              <ModalStateProvider>
+                <Cliente />
+              </ModalStateProvider>
+            }
+          />
+          <Route path="/farewellclient" element={<FarewellClient />} />
+          <Route
+            path="/productocreate"
+            element={
+              <ProductoProvider>
+                <ProductoCreate />
+              </ProductoProvider>
+            }
+          />
+          <Route path="/productostodos" element={<ProductosTodos />} />
+          <Route path="/productounico/:id" element={<ProductoUnico />} />
+          <Route path="/shoppingcart" element={<ShoppingCart />} />
+        </Routes>
+      </ShopingCartProvider>
     </div>
   )
 }

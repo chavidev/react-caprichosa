@@ -60,12 +60,8 @@ const ProductosTodos = () => {
         identificada, ¡estás en el sitio adecuado! contamos con 150.000 referencias, y si no
         exietiese, creamos la prenda a tu medida.
       </Text>
-      {/* <Row>
-        <Col span={12}>col-12</Col>
-        <Col span={12}>col-12</Col>
-      </Row> */}
       <List
-        grid={{ gutter: 16, column: 4, xs: 2, sm: 2, md: 4 }} /* sm: 4, */
+        grid={{ gutter: 16, column: 4, xs: 2, sm: 2, md: 4 }}
         pagination={{
           pageSize: 4
         }}

@@ -1,14 +1,22 @@
 import React from 'react'
+import useShopingCart from '../providers/ShopingCartProvider'
+//import useSpinner from '../providers/SpinnerProvider'
 import { PageHeader, Button, Descriptions, Input, Space } from 'antd'
 import { FaSearch } from 'react-icons/fa'
 import NavegationLinks from '../components/NavegationLinks'
 const { Search } = Input
 
 const Header = () => {
+  //const {articlesShopingCart, setArticlesShopingCart} = useShopingCart()
+  //console.log('test:...', useSpinner())
+  const { articlesShopingCart, setArticlesShopingCart } = useShopingCart()
+  console.log('imprimiendo desde header', articlesShopingCart)
+
   const onSearch = value => console.log(value) //&&pendiente hacer la búsqueda
   return (
     <>
       <div className="search-container">
+        {articlesShopingCart}
         <svg xmlns="http://www.w3.org/2000/svg" className="ionicon" viewBox="0 0 512 512">
           <title>Cart</title>
           <circle cx="176" cy="416" r="32" />

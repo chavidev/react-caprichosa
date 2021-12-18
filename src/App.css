@@ -106,9 +106,25 @@
   display: none;
 }
 
+footer {
+  padding: 7px 0px;
+  background-color: rgb(193, 203, 221);
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: start;
+}
+
 footer .navegation-links {
   display: flex;
-  direction: column;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 10px;
+}
+
+.footer-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
 }
 
 @media (min-width: 768px) {
@@ -129,9 +145,8 @@ footer .navegation-links {
   .navegation-select {
     display: none;
   }
-  footer .navegation-links {
-    display: flex;
-    direction: column;
+  footer {
+    grid-template-columns: 1fr 1fr 1fr;
   }
   .App {
     width: 768px;
