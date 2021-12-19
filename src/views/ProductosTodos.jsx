@@ -1,10 +1,11 @@
 import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Card, Pagination, Row, Col, List, Avatar, Typography, Space } from 'antd'
+import { Card, Pagination, Row, Col, List, Avatar, Typography, Space, Image } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons'
 import Header from '../components/Header'
+//import imgDesktop from '../../public/img/1desktop_820_273.jpg' //../public/img/1-desktop_820_273.jpg
 import Footer from '../components/Footer'
 
 const { Meta } = Card
@@ -55,10 +56,17 @@ const ProductosTodos = () => {
   return (
     <div className="flex-div">
       <Header />
+      <div className="img-desktop">
+        <Image width={940} src={'img/1desktop_820_273.jpg'} />
+      </div>
+      <div className="img-tablet">
+        <Image width={724} src={'img/1tablet_724_310.jpg'} />
+      </div>
+      <p className="title">AWAKEN YOUR INNER CHILD</p>
       <Text>
-        Sabemos que eres caprichosa en el momento de eligir una prenda con la que te sientas
-        identificada, ¡estás en el sitio adecuado! contamos con 150.000 referencias, y si no
-        exietiese, creamos la prenda a tu medida.
+        We know you're picky when you're choosing a piece of clothing that defines you. You're in
+        the right place! We have over 150,000 pieces of clothing. And if we don't have what you're
+        looking for, we'll design your article.
       </Text>
       <List
         grid={{ gutter: 16, column: 4, xs: 2, sm: 2, md: 4 }}

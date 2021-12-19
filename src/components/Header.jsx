@@ -37,7 +37,7 @@ const Header = () => {
         </div>
       </div>
       <div className="navegation">
-        <h2 className="title">A Big Title</h2>
+        <h2 className="title">Picky.es</h2>
         <div className="navegation-links">
           <NavegationLinks />
         </div>
@@ -54,4 +54,3 @@ const Header = () => {
 }
 
 export default Header
-//########################################

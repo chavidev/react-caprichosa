@@ -10,15 +10,17 @@ const Footer = () => {
           <NavegationLinks />
         </div>
         <div>
-          <span className="footer-title">Titulo del texto</span>
+          <span className="footer-title">New release</span>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est unde incidunt maiores
-            corrupti eos. Modi porro error voluptate totam neque labore pariatur molestias vero? Id
-            doloribus aliquam dolore laboriosam optio.
+            The solution to
+            <br />
+            your sexy, plus size lingere
+            <br />
+            is in Picky.es.
           </p>
         </div>
         <div>
-          <span className="footer-title">Titulo del texto</span>
+          <span className="footer-title">On January 2022 Jump</span>
           <img src="" alt="" />
         </div>
       </footer>

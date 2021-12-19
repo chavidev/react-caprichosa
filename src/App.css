@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -106,6 +111,13 @@
   display: none;
 }
 
+.img-desktop {
+  display: none;
+}
+.img-tablet {
+  display: none;
+}
+
 footer {
   padding: 7px 0px;
   background-color: rgb(193, 203, 221);
@@ -156,6 +168,11 @@ footer .navegation-links {
     width: 724px;
     border: solid rgb(168, 79, 190) 2px;
   }
+
+  .img-tablet {
+    display: flex;
+    margin-bottom: 10px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -166,5 +183,12 @@ footer .navegation-links {
   .flex-div {
     width: 940px;
     border: solid rgb(168, 79, 190) 2px;
+  }
+  .img-desktop {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .img-tablet {
+    display: none;
   }
 }
