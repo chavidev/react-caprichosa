@@ -62,12 +62,12 @@ const ProductosTodos = () => {
       <div className="img-tablet">
         <Image width={724} src={'img/1tablet_724_310.jpg'} />
       </div>
-      <p className="title">AWAKEN YOUR INNER CHILD</p>
-      <Text>
+      <p className="title-head-line">AWAKEN YOUR INNER CHILD</p>
+      <p className="body-head-line">
         We know you're picky when you're choosing a piece of clothing that defines you. You're in
         the right place! We have over 150,000 pieces of clothing. And if we don't have what you're
         looking for, we'll design your article.
-      </Text>
+      </p>
       <List
         grid={{ gutter: 16, column: 4, xs: 2, sm: 2, md: 4 }}
         pagination={{

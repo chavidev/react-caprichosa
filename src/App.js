@@ -18,8 +18,6 @@ import { ShopingCartProvider } from './providers/ShopingCartProvider'
 function App() {
   return (
     <div className="App">
-      <p> nav</p>
-      <h1>ReactRouter</h1>
       <ShopingCartProvider>
         <Routes>
           <Route path="/loginadmin" element={<LoginAdmin />} />

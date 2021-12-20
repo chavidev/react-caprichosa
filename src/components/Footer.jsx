@@ -32,30 +32,29 @@ const Footer = () => {
           <span className="footer-title">On January 2022 Start</span>
           <img src="" alt="" />
           {/* el carrusel ha de ir en un componente externo */}
-        </div>
-        <div className="carrusel" style={{ width: '133px' }}>
-          {' '}
-          {/* style={{ width: '133px'; z-index:'2' }} ¿cómo le pondría dos? se qeu está mal, pero quiero ser capaz de hacerlo*/}
-          <Carousel autoplay>
-            <div>
-              <Image width={166} src={'img/1.jpg'} />
-            </div>
-            <div>
-              <Image width={166} src={'img/2.jpg'} />
-            </div>
-            <div>
-              <Image width={166} src={'img/3.jpg'} />
-            </div>
-            <div>
-              <Image width={166} src={'img/4.jpg'} />
-            </div>
-            <div>
-              <Image width={166} src={'img/5.jpg'} />
-            </div>
-            <div>
-              <Image width={166} src={'img/6.jpg'} />
-            </div>
-          </Carousel>
+          <div className="carrusel" style={{ width: '133px' }}>
+            {/* style={{ width: '133px'; z-index:'2' }} ¿cómo le pondría dos? se qeu está mal, pero quiero ser capaz de hacerlo*/}
+            <Carousel autoplay>
+              <div>
+                <Image width={166} src={'img/1.jpg'} />
+              </div>
+              <div>
+                <Image width={166} src={'img/2.jpg'} />
+              </div>
+              <div>
+                <Image width={166} src={'img/3.jpg'} />
+              </div>
+              <div>
+                <Image width={166} src={'img/4.jpg'} />
+              </div>
+              <div>
+                <Image width={166} src={'img/5.jpg'} />
+              </div>
+              <div>
+                <Image width={166} src={'img/6.jpg'} />
+              </div>
+            </Carousel>
+          </div>
         </div>
       </footer>
     </>
