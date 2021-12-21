@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
         <div>
           <span className="footer-title">New release</span>
-          <p>
+          <p className="footer-release">
             The solution to
             <br />
             your sexy, plus size lingere
@@ -57,9 +57,11 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      <p className="footer-derechos">
+        @2012 AcmeWidgets. All Rights Reserved. Support: Support @ AcmeWidgets.com
+      </p>
     </>
   )
 }
 
 export default Footer
-//########################################
