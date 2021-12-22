@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Card, Select, Form, Button } from 'antd'
+import { Card, Select, Form, Button, Image } from 'antd'
 const { Meta } = Card
 
 const ShoppingCart = () => {
@@ -62,15 +62,17 @@ const ShoppingCart = () => {
       <Card
         hoverable
         style={{ width: 240 }}
-        cover={
-          <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-        }
+        cover={<img alt="example" src={'señorita-carrito.jpg'} />}
       >
-        <Meta title="tittle" description="description" />
+        <Meta title="Shoping Cart" description="_" />
         {shoppingCart.variaciones?.map((variacion, i) => {
+          console.log(`variacion=>${variacion}, i=>${i}`)
           return (
             <div key={i} style={{ display: 'block' }}>
-              {variacion.id_variacion}
+              <p>id_variacion{variacion.id_variacion}</p>
+              <p>cantidad:{variacion.cantidad}</p>
+              <p>{i}</p>
+              <p>_________________</p>
             </div>
           )
         })}
