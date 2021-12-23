@@ -1,15 +1,10 @@
 import axios from 'axios'
-import React, { createContext, useContext, useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { createContext, useContext, useState } from 'react'
 
 const ShopingCartContext = createContext()
 export const ShopingCartProvider = props => {
   const [articlesShopingCart, setArticlesShopingCart] = useState(0)
-  const navigate = useNavigate()
-  const navegarShopingCart = () => {
-    navigate(`/shoppingcart/`)
-    /* && en el header, importalo para quitar líneas cuando va a l producto único*/
-  }
+
   const [shoppingCart, setShoppingCart] = useState({})
 
   const getShoppingCart = async () => {
@@ -36,13 +31,15 @@ export const ShopingCartProvider = props => {
       console.log(err)
     }
   }
-
-  useEffect(() => {
-    getShoppingCart()
-  }, [])
   return (
     <ShopingCartContext.Provider
-      value={{ articlesShopingCart, setArticlesShopingCart, navegarShopingCart }}
+      value={{
+        articlesShopingCart,
+        setArticlesShopingCart,
+        shoppingCart,
+        setShoppingCart,
+        getShoppingCart
+      }}
     >
       {props.children}
     </ShopingCartContext.Provider>

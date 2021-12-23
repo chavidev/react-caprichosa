@@ -1,34 +1,20 @@
-import axios from 'axios'
+//import axios from 'axios'
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import useShopingCart from '../providers/ShopingCartProvider'
 import { Card, Select, Form, Button, Image } from 'antd'
 const { Meta } = Card
 
 const ShoppingCart = () => {
-  //&& tengo que extraerlo desdeShopingCartProvider
-  const [shoppingCart, setShoppingCart] = useState({})
-
-  const getShoppingCart = async () => {
-    console.log('inicio__getShoppingCart__________________')
-    try {
-      let tokenCliente = localStorage.getItem('tokenCliente')
-      var config = {
-        method: 'get',
-        url: `http://localhost:5001/api/shoppingCart`,
-        headers: {
-          authorization: `Bearer ${tokenCliente}`
-        }
-      }
-      let response = await axios(config)
-      console.log('response____________________', response)
-
-      console.log(response.data)
-      setShoppingCart(response.data.shoppingCart)
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
+  const {
+    articlesShopingCart,
+    setArticlesShopingCart,
+    navegarShopingCart,
+    shoppingCart,
+    setShoppingCart,
+    getShoppingCart
+  } = useShopingCart()
+  /* ¿es correcto dejarlo aquí y no llevarlo al provider?, pienso que si */
   useEffect(() => {
     getShoppingCart()
   }, [])
