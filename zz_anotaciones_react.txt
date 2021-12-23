@@ -1,11 +1,15 @@
-original
-<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-        
+1- git clone https://github.com/chavidev/react-caprichosa 
+2- npm i (to install the dependencies)
+3- npm run dev
+4- go to http://localhost:3000/login
+Email: CLIENTE_40@gmail.com
+Pass: pass_cliente
 
+5-http://localhost:3000/productostodos
+here its possible to see the diferents views to the website
 
+5a go to my acount and change my information
 
+5b go to the cart
 
-  {/* <img alt="señorita-carrito.jpg" src={'señorita-carrito.jpg'} /> */}
-                    
-          {/* <Image width={200} src={'farewell.jpg'} /> */}
-          /*  */
+5c go to the page of this article, were it´s possible to add the article

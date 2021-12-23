@@ -3,6 +3,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import useShopingCart from '../providers/ShopingCartProvider'
 import { Card, Select, Form, Button, Image } from 'antd'
+import { MinusCircleTwoTone, PlusCircleTwoTone, DeleteTwoTone } from '@ant-design/icons'
 const { Meta } = Card
 
 const ShoppingCart = () => {
@@ -58,12 +59,21 @@ const ShoppingCart = () => {
             <div key={i} style={{ display: 'block' }}>
               <Card hoverable style={{ width: 200 }}>
                 <div className="card-shopingCart">
-                  <img alt="example" width="50px" src={'señorita-carrito.jpg'} />
+                  <img
+                    className="img-card-shopingCart"
+                    alt="example"
+                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                  />
                   <p>
-                    Article:{i + 1} Ref:{variacion.id_variacion} <br />
+                    Article:{i + 1} Ref:{variacion.id_variacion}{' '}
+                    <DeleteTwoTone style={{ fontSize: '40px' }} />
+                    <br />
                     dress n <br />
-                    color: red size: M <br />
-                    Quantity:{variacion.cantidad}
+                    color: red <br />
+                    size: M <br />
+                    <MinusCircleTwoTone />
+                    {` ${variacion.cantidad} `}
+                    <PlusCircleTwoTone />
                   </p>
                 </div>
               </Card>

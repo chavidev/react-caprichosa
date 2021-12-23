@@ -129,8 +129,12 @@ body {
 }
 .card-shopingCart {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+}
+
+.img-card-shopingCart {
+  width: 100%;
 }
 
 footer {

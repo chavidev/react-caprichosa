@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState, useEffect } from 'react'
 
 const ShopingCartContext = createContext()
 export const ShopingCartProvider = props => {
@@ -31,6 +31,10 @@ export const ShopingCartProvider = props => {
       console.log(err)
     }
   }
+  // &&si quito el use efect de aquí no funciona pero no entiendo por qué
+  useEffect(() => {
+    getShoppingCart()
+  }, [])
   return (
     <ShopingCartContext.Provider
       value={{
