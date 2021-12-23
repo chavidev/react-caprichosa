@@ -127,6 +127,11 @@ body {
   font-family: 'Asul', sans-serif;
   padding: 0 10px;
 }
+.card-shopingCart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 footer {
   padding: 7px 0px;

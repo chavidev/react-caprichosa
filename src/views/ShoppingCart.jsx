@@ -5,6 +5,7 @@ import { Card, Select, Form, Button, Image } from 'antd'
 const { Meta } = Card
 
 const ShoppingCart = () => {
+  //&& tengo que extraerlo desdeShopingCartProvider
   const [shoppingCart, setShoppingCart] = useState({})
 
   const getShoppingCart = async () => {
@@ -69,10 +70,17 @@ const ShoppingCart = () => {
           console.log(`variacion=>${variacion}, i=>${i}`)
           return (
             <div key={i} style={{ display: 'block' }}>
-              <p>id_variacion{variacion.id_variacion}</p>
-              <p>cantidad:{variacion.cantidad}</p>
-              <p>{i}</p>
-              <p>_________________</p>
+              <Card hoverable style={{ width: 200 }}>
+                <div className="card-shopingCart">
+                  <img alt="example" width="50px" src={'señorita-carrito.jpg'} />
+                  <p>
+                    Article:{i + 1} Ref:{variacion.id_variacion} <br />
+                    dress n <br />
+                    color: red size: M <br />
+                    Quantity:{variacion.cantidad}
+                  </p>
+                </div>
+              </Card>
             </div>
           )
         })}
