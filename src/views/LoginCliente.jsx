@@ -1,36 +1,36 @@
-import React from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
-import axios from 'axios';
-import TitleLogin from '../components/Login';
+import React from 'react'
+import { Form, Input, Button, Checkbox } from 'antd'
+import axios from 'axios'
+import TitleLogin from '../components/Login'
 //rafce
 
-
 const LoginCliente = () => {
-  const onFinish = async(values) => {  //Tengo qeu meterle un try catch, ejemplo al final de éste documento
-    console.log('Success:', values);  
-    //let response = await axios.post("http://localhost:5001/api/loginCliente/login",JSON.stringify(values))
-   
+  const onFinish = async values => {
+    //Tengo qeu meterle un try catch, ejemplo al final de éste documento
+    console.log('Success:', values)
+    //let response = await axios.post("https://node-caprichosa.herokuapp.com/api/loginCliente/login",JSON.stringify(values))
+
     var config = {
       method: 'post',
-      url: 'http://localhost:5001/api/loginCliente/login',
-      data : values
-    };
-    
+      url: 'https://node-caprichosa.herokuapp.com/api/loginCliente/login',
+      data: values
+    }
+
     let response = await axios(config)
-    //let response = await axios.post('http://localhost:5001/api/loginCliente/login',values)
+    //let response = await axios.post('https://node-caprichosa.herokuapp.com/api/loginCliente/login',values)
     console.log(response)
     //let res = JSON.stringify(response.data.token)
     let res = response.data.token
     //localStorage.setItem('tokenCliente', JSON.parse(res))
     localStorage.setItem('tokenCliente', res)
-  };
+  }
 
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
+  const onFinishFailed = errorInfo => {
+    console.log('Failed:', errorInfo)
+  }
 
-// en lugar de un div he de colocarle el elemento que  hace que no sea un elimento nuevo <> </> no me suele gustar mucho, 
-//¿el otro qeu tal es?
+  // en lugar de un div he de colocarle el elemento que  hace que no sea un elimento nuevo <> </> no me suele gustar mucho,
+  //¿el otro qeu tal es?
   return (
     <div>
       <TitleLogin />
@@ -69,13 +69,10 @@ const LoginCliente = () => {
         </Form.Item>
       </Form>
     </div>
-  );
-};
-
-
+  )
+}
 
 export default LoginCliente
-
 
 /* 
 .then(function (response) {

@@ -48,7 +48,7 @@ export const ProductoProvider = props => {
 
     var config = {
       method: 'post',
-      url: `http://localhost:5001/api/producto`,
+      url: `https://node-caprichosa.herokuapp.com/api/producto`,
       data: values
     }
 
