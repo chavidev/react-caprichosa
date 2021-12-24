@@ -10,6 +10,14 @@ ReactDOM.render(
   <BrowserRouter>
     <SpinnerStateProvider>
       <App />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
+        rel="stylesheet"
+      ></link>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Asul&family=Concert+One&display=swap"
+        rel="stylesheet"
+      ></link>
     </SpinnerStateProvider>
   </BrowserRouter>,
 

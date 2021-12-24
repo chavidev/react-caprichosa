@@ -1,8 +1,24 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Modal, Text, Input, Button } from 'antd'
+import { Modal, Input, Button, Typography } from 'antd'
+import useModalEliminarCliente from '../providers/ModalEliminarClienteProvider'
+const { Text } = Typography
 
 const ModalEliminarCliente = () => {
+  const {
+    cliente,
+    setCliente,
+    deleteButon,
+    setDeleteButon,
+    showModal,
+    isModalVisible,
+    handleOk,
+    handleCancel,
+    inputRef,
+    toggleDeleteButon,
+    confirmationInput,
+    deleteCliente
+  } = useModalEliminarCliente()
   return (
     <>
       <Modal

@@ -7,18 +7,44 @@ import LoginCliente from './views/LoginCliente'
 import ClientesTodos from './views/ClientesTodos'
 import Cliente from './views/Cliente'
 import FarewellClient from './views/FarewellClient'
+import { ModalStateProvider } from './providers/ModalEliminarClienteProvider'
+import { ProductoProvider } from './providers/ProductoProvider'
+import ProductoCreate from './views/ProductoCreate'
+import ProductosTodos from './views/ProductosTodos'
+import ProductoUnico from './views/ProductoUnico'
+import ShoppingCart from './views/ShoppingCart'
+import { ShopingCartProvider } from './providers/ShopingCartProvider'
+
 function App() {
   return (
     <div className="App">
-      <p> aquí puedo meter la nav</p>
-      <h1>Welcome to React Router!</h1>
-      <Routes>
-        <Route path="/loginadmin" element={<LoginAdmin />} />
-        <Route path="/login" element={<LoginCliente />} />
-        <Route path="/clientes" element={<ClientesTodos />} />
-        <Route path="/cliente" element={<Cliente />} />
-        <Route path="/farewellclient" element={<FarewellClient />} />
-      </Routes>
+      <ShopingCartProvider>
+        <Routes>
+          <Route path="/loginadmin" element={<LoginAdmin />} />
+          <Route path="/login" element={<LoginCliente />} />
+          <Route path="/clientes" element={<ClientesTodos />} />
+          <Route
+            path="/cliente"
+            element={
+              <ModalStateProvider>
+                <Cliente />
+              </ModalStateProvider>
+            }
+          />
+          <Route path="/farewellclient" element={<FarewellClient />} />
+          <Route
+            path="/productocreate"
+            element={
+              <ProductoProvider>
+                <ProductoCreate />
+              </ProductoProvider>
+            }
+          />
+          <Route path="/productostodos" element={<ProductosTodos />} />
+          <Route path="/productounico/:id" element={<ProductoUnico />} />
+          <Route path="/shoppingcart" element={<ShoppingCart />} />
+        </Routes>
+      </ShopingCartProvider>
     </div>
   )
 }

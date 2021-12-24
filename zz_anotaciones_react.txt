@@ -1,48 +1,20 @@
-const [disabled, setDisabled] = React.useState(true);
+1- git clone https://github.com/chavidev/react-caprichosa 
+2- npm i (to install the dependencies)
+3- npm run dev
+4- go to http://localhost:3000/login
+Email: CLIENTE_40@gmail.com
+Pass: pass_cliente
 
-const toggle = () => {
-  setDisabled(!disabled);
+5-http://localhost:3000/productostodos
+here its possible to see the diferents views to the website
 
+5a go to my acount and change my information
 
-<Switch disabled={disabled} defaultChecked />
-      <br />
-      <Button type="primary" onClick={toggle}>
-        abilitr el botón eliminar
-      </Button>
+5b go to the cart
 
-
-email: "CLIENTE_29@gmail.com"
-id_cliente: 29
-nombre: "cliente 29"
-pass: "pass_cliente"
-telefono: 123456790
+5c go to the page of this article, were it´s possible to add the article
 
 
-qeu pasada el router nuevo de React
+the server it isn´t necesary to install, becausse are in heroku
 
-aquí está un tutorial que está genial, pienso que es tan rebolucionario como cuando sacaron los hooks, 
-pero en las redes no le han dado demasiada importancia
-¿será qeu los desarrolladores ya no tienen tiempo ni para las redes?
-
-
-que me guarde los datos automáticamente en mongo ya lo tengo, solo me falta ésto para ir mas rápido
-
-UPS, para ver "tu cuenta" es necesario estar logueado
-que lleve a la página qeu lo envió
-
-
-
-https://framerusercontent.com/modules/NQ9LlTfXzHTRhTTi6qMI/tXuubIdpb4aq5IPqZT6G/Loading.js#Loading
-
-
-
-isModalVisible value
-handleOk   function
-handleCancel  function
-cliente.id_cliente  value
-ref={inputRef}   value
-toggleDeleteButon    function
-
-
-
-
+here you can see the form to work in the website at this moment

@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -28,15 +33,6 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .card-cliente-parent,
 .card-client-farewell {
   display: flex;
@@ -46,6 +42,21 @@
 }
 .card-cliente-parent img {
   margin-bottom: 30px; /* he de colocar un % del ¿vh? ancho o alto de la pantalla */
+}
+
+/* productosTodos */
+.App {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  border: solid red 2px;
+  flex-direction: column;
+}
+.flex-div {
+  display: flex;
+  width: 280px;
+  border: solid rgb(168, 79, 190) 2px;
+  flex-direction: column;
 }
 
 /* 
@@ -58,3 +69,175 @@
 .boton-guardar{
   background-color: #52c41a !important;
 } */
+.ionicon {
+  width: 30px;
+}
+
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+  background-color: rgb(193, 203, 221);
+}
+
+.seacher {
+  border-radius: 500px;
+  text-align: center;
+  border: none;
+}
+
+.seacher::placeholder {
+  font-size: 10px;
+}
+
+.icon-input .icon {
+  position: absolute;
+  margin: 7px;
+}
+
+.navegation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navegation-select {
+  display: inline;
+}
+
+.navegation-links {
+  display: none;
+}
+
+.img-desktop {
+  display: none;
+}
+.img-tablet {
+  display: none;
+}
+.title-head-line {
+  /* font-family: 'Quicksand', sans-serif; */
+  font-family: 'Concert One';
+  font-weight: 500;
+  /* font-size: 2em; */ /* && quiero que sea el doble a lo que trae por defecto */
+}
+.body-head-line {
+  font-family: 'Asul', sans-serif;
+  padding: 0 10px;
+}
+.card-shopingCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-card-shopingCart {
+  width: 100%;
+}
+
+footer {
+  padding: 7px 0px;
+  background-color: #c1cbdd;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: start;
+}
+
+footer .navegation-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+footer .navegation-links a {
+  color: #10429e;
+}
+
+.footer-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+}
+.footer-release {
+  color: #9e700d;
+  font-size: 1.3em;
+  text-align: center;
+  margin-top: 7px;
+}
+
+.carrusel {
+  width: '133px';
+  border-color: 25px solid rgb(240, 190, 54);
+  z-index: 2;
+}
+
+.footer-derechos {
+  padding: 12px 0;
+}
+
+@media (min-width: 768px) {
+  .search-container {
+    justify-content: end;
+  }
+  .navegation {
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navegation-links {
+    display: flex;
+  }
+
+  .navegation-links a {
+    margin: 0px 10px;
+  }
+  .navegation-select {
+    display: none;
+  }
+  .title {
+    margin-left: 6px;
+    font-weight: 300;
+  }
+  .title-head-line {
+    font-size: 2em; /* && quiero que sea el doble a lo que trae por defecto */
+  }
+  footer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .footer-release {
+    margin-top: 35px;
+  }
+  .App {
+    width: 768px;
+    border: solid rgb(185, 111, 111) 2px;
+  }
+  .flex-div {
+    width: 724px;
+    border: solid rgb(168, 79, 190) 2px;
+  }
+
+  .img-tablet {
+    display: flex;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .App {
+    width: 1024px;
+    border: solid rgb(185, 111, 111) 2px;
+  }
+  .flex-div {
+    width: 940px;
+    border: solid rgb(168, 79, 190) 2px;
+  }
+  .img-desktop {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .img-tablet {
+    display: none;
+  }
+}

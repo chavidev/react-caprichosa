@@ -1,0 +1,55 @@
+* [33m8f6af8a[m[33m ([m[1;36mHEAD -> [m[1;32mchavi1[m[33m)[m componente guardar editar cancelar
+* [33m0b3b42d[m limpieza desarrollada
+* [33m0a8c299[m _
+* [33m2bc08d9[m _
+* [33md21127e[m modalEliminarCliente funciona => extraer componente fuera
+[31m|[m *   [33m835bd56[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m Merge branch 'chavi1'
+[31m|[m [32m|[m[31m\[m  
+[31m|[m [32m|[m[31m/[m  
+[31m|[m[31m/[m[32m|[m   
+* [32m|[m [33mc14d065[m[33m ([m[1;31morigin/chavi1[m[33m)[m _
+* [33m8f6af8a[m[33m ([m[1;36mHEAD -> [m[1;32mchavi1[m[33m)[m componente guardar editar cancelar
+* [33m0b3b42d[m limpieza desarrollada
+* [33m0a8c299[m _
+* [33m2bc08d9[m _
+* [33md21127e[m modalEliminarCliente funciona => extraer componente fuera
+[31m|[m *   [33m835bd56[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m Merge branch 'chavi1'
+[31m|[m [32m|[m[31m\[m  
+[31m|[m [32m|[m[31m/[m  
+[31m|[m[31m/[m[32m|[m   
+* [32m|[m [33mc14d065[m[33m ([m[1;31morigin/chavi1[m[33m)[m _
+* [33m4933878[m[33m ([m[1;36mHEAD -> [m[1;32mchavi1[m[33m)[m ::placeholder input perfecto
+* [33mf3f1845[m Header in ProductosTodos => la lupa no entra en el input
+* [33m8ba1c37[m ShoppingCart
+* [33m071f39e[m productos todos funciona con paginación
+* [33mde6cbce[m productos todos y página de producto único
+* [33mb0f700e[m _
+* [33mc354e68[m ProductoProvider ordenado
+* [33m4933878[m[33m ([m[1;36mHEAD -> [m[1;32mchavi1[m[33m)[m ::placeholder input perfecto
+* [33mf3f1845[m Header in ProductosTodos => la lupa no entra en el input
+* [33m8ba1c37[m ShoppingCart
+* [33m071f39e[m productos todos funciona con paginación
+* [33mde6cbce[m productos todos y página de producto único
+* [33mb0f700e[m _
+* [33mc354e68[m ProductoProvider ordenado
+* [33mba54281[m[33m ([m[1;36mHEAD -> [m[1;32mchavi1[m[33m)[m _ por si acaso meto la pata con los colores
+* [33mc92c721[m carrusel funciona, pero no está dentro del footer
+* [33m96e6c6f[m _
+* [33m4a04e2d[m _
+* [33ma9cc18c[m componente enlaces header-footer y footer
+* [33m4933878[m ::placeholder input perfecto
+* [33mf3f1845[m Header in ProductosTodos => la lupa no entra en el input
+* [33m0601550[m[33m ([m[1;36mHEAD -> [m[1;32mchavi1[m[33m)[m _
+* [33mba54281[m _ por si acaso meto la pata con los colores
+* [33mc92c721[m carrusel funciona, pero no está dentro del footer
+* [33m96e6c6f[m _
+* [33m4a04e2d[m _
+* [33ma9cc18c[m componente enlaces header-footer y footer
+* [33m4933878[m ::placeholder input perfecto
+* [33m0601550[m[33m ([m[1;36mHEAD -> [m[1;32mchavi1[m[33m)[m _
+* [33mba54281[m _ por si acaso meto la pata con los colores
+* [33mc92c721[m carrusel funciona, pero no está dentro del footer
+* [33m96e6c6f[m _
+* [33m4a04e2d[m _
+* [33ma9cc18c[m componente enlaces header-footer y footer
+* [33m4933878[m ::placeholder input perfecto
