@@ -13,3 +13,8 @@ here its possible to see the diferents views to the website
 5b go to the cart
 
 5c go to the page of this article, were it´s possible to add the article
+
+
+the server it isn´t necesary to install, becausse are in heroku
+
+here you can see the form to work in the website at this moment

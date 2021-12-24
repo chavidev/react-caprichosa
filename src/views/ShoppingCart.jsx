@@ -13,7 +13,9 @@ const ShoppingCart = () => {
     navegarShopingCart,
     shoppingCart,
     setShoppingCart,
-    getShoppingCart
+    getShoppingCart,
+    variacionProducto,
+    setVariacionProducto
   } = useShopingCart()
   /* ¿es correcto dejarlo aquí y no llevarlo al provider?, pienso que si */
   useEffect(() => {
@@ -46,42 +48,44 @@ const ShoppingCart = () => {
     console.log('onFinish ejecutado => COMPRADO')
   }
   return (
-    <div>
-      <Card
-        hoverable
-        style={{ width: 240 }}
-        cover={<img alt="example" src={'señorita-carrito.jpg'} />}
-      >
-        <Meta title="Shoping Cart" description="_" />
-        {shoppingCart.variaciones?.map((variacion, i) => {
-          console.log(`variacion=>${variacion}, i=>${i}`)
-          return (
-            <div key={i} style={{ display: 'block' }}>
-              <Card hoverable style={{ width: 200 }}>
-                <div className="card-shopingCart">
-                  <img
-                    className="img-card-shopingCart"
-                    alt="example"
-                    src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                  />
-                  <p>
-                    Article:{i + 1} Ref:{variacion.id_variacion}{' '}
-                    <DeleteTwoTone style={{ fontSize: '40px' }} />
-                    <br />
-                    dress n <br />
-                    color: red <br />
-                    size: M <br />
-                    <MinusCircleTwoTone />
-                    {` ${variacion.cantidad} `}
-                    <PlusCircleTwoTone />
-                  </p>
-                </div>
-              </Card>
-            </div>
-          )
-        })}
-      </Card>
-    </div>
+    <>
+      <div>
+        <Card
+          hoverable
+          style={{ width: 240 }}
+          cover={<img alt="example" src={'señorita-carrito.jpg'} />}
+        >
+          <Meta title="Shoping Cart" description="_" />
+          {variacionProducto?.map((variacion, i) => {
+            console.log(`variacion=>${variacion}, i=>${i}`)
+            return (
+              <div key={i} style={{ display: 'block' }}>
+                <Card hoverable style={{ width: 200 }}>
+                  <div className="card-shopingCart">
+                    <img
+                      className="img-card-shopingCart"
+                      alt="example"
+                      src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                    />
+                    <p>
+                      Article:{i + 1} Ref:{variacion.variacion.id_variacion}
+                      <DeleteTwoTone style={{ fontSize: '40px' }} />
+                      <br />
+                      {variacion.producto.nombre} <br />
+                      color: {variacion.variacion_elegida.atributo_1} <br />
+                      size: {variacion.variacion_elegida.atributo_2} <br />
+                      <MinusCircleTwoTone />
+                      {` ${variacion.variacion.cantidad} `}
+                      <PlusCircleTwoTone />
+                    </p>
+                  </div>
+                </Card>
+              </div>
+            )
+          })}
+        </Card>
+      </div>
+    </>
   )
 }
 

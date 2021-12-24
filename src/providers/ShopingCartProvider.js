@@ -6,6 +6,7 @@ export const ShopingCartProvider = props => {
   const [articlesShopingCart, setArticlesShopingCart] = useState(0)
 
   const [shoppingCart, setShoppingCart] = useState({})
+  const [variacionProducto, setVariacionProducto] = useState([])
 
   const getShoppingCart = async () => {
     console.log('inicio__getShoppingCart__________________')
@@ -26,6 +27,7 @@ export const ShopingCartProvider = props => {
 
       console.log(response.data)
       setShoppingCart(response.data.shoppingCart)
+      setVariacionProducto(response.data.variacionProducto)
       setArticlesShopingCart(response.data.shoppingCart.variaciones.length)
     } catch (err) {
       console.log(err)
@@ -42,7 +44,9 @@ export const ShopingCartProvider = props => {
         setArticlesShopingCart,
         shoppingCart,
         setShoppingCart,
-        getShoppingCart
+        getShoppingCart,
+        variacionProducto,
+        setVariacionProducto
       }}
     >
       {props.children}
