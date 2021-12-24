@@ -13,7 +13,7 @@ const ProductoUnico = () => {
 
   const getProducto = async () => {
     try {
-      let response = await axios(`http://localhost:5001/api/producto/${id}`)
+      let response = await axios(`https://node-caprichosa.herokuapp.com/api/producto/${id}`)
       console.log(response.data)
       setProducto(response.data)
     } catch (err) {
@@ -37,7 +37,7 @@ const ProductoUnico = () => {
     let tokenCliente = localStorage.getItem('tokenCliente')
     var config = {
       method: 'post',
-      url: `http://localhost:5001/api/shoppingCart`,
+      url: `https://node-caprichosa.herokuapp.com/api/shoppingCart`,
       headers: {
         authorization: `Bearer ${tokenCliente}`
       },

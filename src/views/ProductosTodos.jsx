@@ -17,7 +17,7 @@ const ProductosTodos = () => {
 
   const getProductos = async () => {
     try {
-      let response = await axios('http://localhost:5001/api/producto')
+      let response = await axios('https://node-caprichosa.herokuapp.com/api/producto')
       console.log(response.data)
       setProductos(response.data)
     } catch (err) {

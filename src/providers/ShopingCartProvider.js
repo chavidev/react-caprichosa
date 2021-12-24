@@ -14,7 +14,7 @@ export const ShopingCartProvider = props => {
       let tokenCliente = localStorage.getItem('tokenCliente')
       var config = {
         method: 'get',
-        url: `http://localhost:5001/api/shoppingCart`,
+        url: `https://node-caprichosa.herokuapp.com/api/shoppingCart`,
         headers: {
           authorization: `Bearer ${tokenCliente}`
         }

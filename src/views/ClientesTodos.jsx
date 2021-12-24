@@ -8,7 +8,7 @@ const ClientesTodos = () => {
 
   const getClientes = async () => {
     try {
-      //let response = await axios('http://localhost:5001/api/cliente')
+      //let response = await axios('https://node-caprichosa.herokuapp.com/api/cliente')
       let response = await axios('https://node-caprichosa.herokuapp.com/api/cliente') //https://node-caprichosa.herokuapp.com/
       console.log(response.data)
       setClientes(response.data)

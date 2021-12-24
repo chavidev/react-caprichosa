@@ -25,7 +25,7 @@ export const ModalStateProvider = props => {
     try {
       let config = {
         method: 'delete',
-        url: `http://localhost:5001/api/cliente/${cliente.id_cliente}`
+        url: `https://node-caprichosa.herokuapp.com/api/cliente/${cliente.id_cliente}`
       }
       let response = await axios(config)
       console.log(`Se ha eliminado el cliente ${cliente.id_cliente}
@@ -68,7 +68,7 @@ export const ModalStateProvider = props => {
       console.log('token:', tokenCliente)
       var config = {
         method: 'get',
-        url: `http://localhost:5001/api/cliente/myaccount`,
+        url: `https://node-caprichosa.herokuapp.com/api/cliente/myaccount`,
         headers: {
           authorization: `Bearer ${tokenCliente}`
         }
@@ -91,8 +91,8 @@ export const ModalStateProvider = props => {
     console.log(`data:${data}`)
     var config = {
       method: 'put',
-      url: `http://localhost:5001/api/cliente/${cliente.id_cliente}`,
-      //url: 'http://localhost:5001/api/cliente/27',
+      url: `https://node-caprichosa.herokuapp.com/api/cliente/${cliente.id_cliente}`,
+      //url: 'https://node-caprichosa.herokuapp.com/api/cliente/27',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },

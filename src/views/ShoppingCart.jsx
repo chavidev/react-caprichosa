@@ -32,7 +32,7 @@ const ShoppingCart = () => {
     let tokenCliente = localStorage.getItem('tokenCliente')
     var config = {
       method: 'post',
-      url: `http://localhost:5001/api/shoppingCart`,
+      url: `https://node-caprichosa.herokuapp.com/api/shoppingCart`,
       headers: {
         authorization: `Bearer ${tokenCliente}`
       },
