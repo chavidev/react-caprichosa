@@ -3,11 +3,11 @@ import React from 'react'
 const NavegationLinks = () => {
   return (
     <>
-      <a href="./">Home</a>
-      <a href="./">Event</a>
-      <a href="./">Accesories</a>
-      <a href="./">Apparel</a>
-      <a href="./">Featured Items</a>
+      <a href="./productostodos">Home</a>
+      <a href="./cliente">My Account</a>
+      <a href="./shoppingcart">ShoppingCart</a>
+      <a href="./login">Login</a>
+      <a href="./clientes">TodosclientesAdmin</a>
     </>
   )
 }
