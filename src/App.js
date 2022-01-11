@@ -19,13 +19,15 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="App">
-      <p>antes del outlet</p>
-      <Header />
-      <Outlet />
-      <Footer />
-      <p>después del outlet</p>
-    </div>
+    <>
+      <div className="flex-div">
+        <Header />
+        <p>antes del outlet</p>
+        <Outlet />
+        <p>después del outlet</p>
+        <Footer />
+      </div>
+    </>
   )
 }
 
