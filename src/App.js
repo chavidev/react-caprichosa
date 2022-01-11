@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, Outlet } from 'react-router-dom'
 
 import './App.css'
 import 'antd/dist/antd.css' //importo la librería de los chinos
@@ -14,38 +14,18 @@ import ProductosTodos from './views/ProductosTodos'
 import ProductoUnico from './views/ProductoUnico'
 import ShoppingCart from './views/ShoppingCart'
 import { ShopingCartProvider } from './providers/ShopingCartProvider'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="App">
-      <ShopingCartProvider>
-        <Routes>
-          <Route path="/loginadmin" element={<LoginAdmin />} />
-          <Route path="/login" element={<LoginCliente />} />
-          <Route path="/clientes" element={<ClientesTodos />} />
-          <Route
-            path="/cliente"
-            element={
-              <ModalStateProvider>
-                <Cliente />
-              </ModalStateProvider>
-            }
-          />
-          <Route path="/farewellclient" element={<FarewellClient />} />
-          <Route
-            path="/productocreate"
-            element={
-              <ProductoProvider>
-                <ProductoCreate />
-              </ProductoProvider>
-            }
-          />
-          <Route path="/productostodos" element={<ProductosTodos />} />
-          <Route path="/productounico/:id" element={<ProductoUnico />} />
-          <Route path="/shoppingcart" element={<ShoppingCart />} />
-        </Routes>
-      </ShopingCartProvider>
-    </div>
+    <>
+      <div className="flex-div">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    </>
   )
 }
 
