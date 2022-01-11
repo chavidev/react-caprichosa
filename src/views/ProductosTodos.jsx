@@ -55,7 +55,7 @@ const ProductosTodos = () => {
   )
   return (
     <div className="flex-div">
-      <Header />
+      {/* <Header /> */}
       <div className="img-desktop">
         <Image width={940} src={'img/1desktop_820_273.jpg'} />
       </div>
@@ -102,7 +102,7 @@ const ProductosTodos = () => {
           </List.Item>
         )}
       />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

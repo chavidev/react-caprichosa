@@ -22,9 +22,7 @@ function App() {
     <>
       <div className="flex-div">
         <Header />
-        <p>antes del outlet</p>
         <Outlet />
-        <p>después del outlet</p>
         <Footer />
       </div>
     </>
