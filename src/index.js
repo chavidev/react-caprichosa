@@ -27,6 +27,7 @@ ReactDOM.render(
       <ShopingCartProvider>
         <Routes>
           <Route path="/" element={<App />}>
+            <Route index element={<ProductosTodos />} />
             <Route path="/loginadmin" element={<LoginAdmin />} />
             <Route path="/login" element={<LoginCliente />} />
             <Route path="/clientes" element={<ClientesTodos />} />
